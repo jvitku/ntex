@@ -8,10 +8,10 @@ echo "
 echo $PWD
 
 
-NAME='HANNS_-_prezentace_minimum'
+NAME='simplenotes'
 echo $NAME
 echo "====================== nTex to LaTex   ===================="
-java -jar ntex.jar -name $NAME
+java -jar nTexProject-1.1.jar -name $NAME
 
 echo "====================== LaTex to PDF 1 ====================="
 echo $NAME'.tex'
@@ -22,3 +22,6 @@ echo "====================== LaTex to PDF 2 ====================="
 pdflatex $TEXNAME
 
 echo "====================== Done ==============================="
+
+PDFNAME=$NAME'.pdf'
+okular $PDFNAME
