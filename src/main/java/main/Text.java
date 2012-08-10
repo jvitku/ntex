@@ -11,19 +11,20 @@ public class Text {
 		this.log = log;
 	}
 	
+	
 	/**
 	 * copy the first part of the template to the resulting stream
 	 * @param from
 	 * @param to
 	 * @returns String defining the default author of the text (saved in template.tex) 
 	 */
-	public String copyIntro(BufferedReader from, BufferedWriter to){
+	public String copyIntro(BufferedReader from, BufferedWriter to, BufferedReader br){
+				
 		String line;
 		try{
 			// while we can read, copy the lines
 			while(true){
 				line= from.readLine();
-				//System.out.println(line);
 				if(line.equalsIgnoreCase("\\begin{document}")){
 					to.write(line);
 					to.newLine();
@@ -39,7 +40,12 @@ public class Text {
 		}
 		try{
 			// try to find the author, if not found, set the default one, me
-			return this.getLineByLatexTag(from, "author",0);
+			
+			String author = this.getNameFromNTex(br);
+			if(author == null)
+				author = this.getLineByLatexTag(from, "author",0);
+			System.out.println("author is: "+author);
+			return author;
 		} catch (IOException e) {
 			log.warn("could not find the \\author{??} in the template");
 			return new String("\\author{Jaroslav Vitku}");
@@ -70,39 +76,58 @@ public class Text {
 			}
 	}
 	
-	public String getTitle(BufferedReader br){
+	public String getNameFromNTex(BufferedReader br){
+		try{
+			return this.getLineByLatexTag(br, "author", 0);
+		}catch(IOException e){
+			log.warn("\\author{} not found  in the nTex file, " +
+					"will try to parse it from template file");
+			return null;
+		}
+	}
+	
+	public String getTitle(String name, BufferedReader br){
 		try{
 			return this.getLineByLatexTag(br, "title", 0);
 		}catch(IOException e){
 			log.warn("\\title{} not found  in the nTex file");
-			return new String("\\title{--title not found in the ntex file--}");
+			return new String("\\title{--title not found in the '"+name+ "'--}");
 		}
 	}
+	
+	private boolean abstractFound = false;
+	private String noAbstract = "none.."; 
 
 	private String findAbstract(BufferedReader from){
 		String line;
-		// try to find the author, if not found, set the default one, me
+		// try to find the abstract (one line!), if not found, return null
 		try{
 			while(true){
 				line= from.readLine();
 				
 				if(line == null){
-					log.err("Abstract not fould");
-					return "--no abstract found in ntex file--";
+					log.warn("Abstract not fould..");
+					return null;
 				}
 							
 				if(line.equalsIgnoreCase("\\begin{abstract}")){
+					this.abstractFound  = true;
 					return from.readLine();
 				}
 			}
 		} catch (IOException e) {
 			log.err("Abstract not fould");
-			return "--no abstract found in ntex file--";
+			return null;
 		}
 	}
 	
 	public void copyAbstract(BufferedReader from, BufferedWriter to){
+		
 		String abs = this.findAbstract(from);
+		if(abs==null){
+			abs = this.noAbstract;
+			this.abstractFound = false;
+		}
 		this.writeAbstract(to, abs);
 	}
 	
@@ -124,9 +149,13 @@ public class Text {
 		}
 	}
 	
-	private String findAbstractEnd(BufferedReader from){
+	private String findAbstractEnd(BufferedReader from){ 
+		// if no abstract found, return it all
+		if(!this.abstractFound)
+			return this.getIt(from);
+		
 		String line;
-		// try to find the author, if not found, set the default one, me
+		// try to find the end of abstract, if not found, we are in trouble 
 		try{
 			while(true){
 				line= from.readLine();

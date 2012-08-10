@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public class Figures {
 
+	
 	// figure setup
 	public final String marker = "\\\\f\\{";
 	public final String placement = "ht";
@@ -188,15 +189,25 @@ public class Figures {
 			double w = Double.parseDouble(s[1]);
 			return Double.toString(w);
 		}catch(Exception e){
-			log.warn("cannot parse the width for fig named: "+s[0]);
+			//log.warn("cannot parse the width for fig named: "+s[0]);
 			return this.defW;
 		}
 	}
 	
 	private String getLabel(String[] s){
-		// no label specified
-		if(s.length<3)
-			return this.nolabel;
+		// first is name, second is either a width (single double) or a label
+		if(s.length<3){
+			if(s.length==2){
+				// try to parse a single double, if OK, there is no label
+				try{
+					@SuppressWarnings("unused")
+					double w = Double.parseDouble(s[1]);
+					return this.nolabel;
+				}catch(Exception e){
+					return s[1];
+				}
+			}
+		}
 		// accidentally cut some commas in the label?
 		if(s.length>3){
 			String st = s[2];

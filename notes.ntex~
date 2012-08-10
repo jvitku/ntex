@@ -1,18 +1,13 @@
 \title{Name of the document}
-
 \author{Name of Author}
-
 \begin{abstract}
 	Abstract in one Line..
 \end{abstract}
-
 \section{Section}
-
 Some normal text..
 -itemized text
 -Some text in \b{bold} and \i{italics}.
 	-higher level..
-
 \subsection{Some subsection here}
 -Here is an example of some citation: \cite{kniha}.
 
@@ -28,7 +23,6 @@ Some normal text..
 
 
 \begin{literatura}{1}
-
 \bibitem{kniha} 
 	Allman J.: \emph{Evolving Brains}, Scientific American Library Paperback, 2000.
-\end{literatura}
+ \end{literatura}
