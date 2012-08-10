@@ -75,28 +75,29 @@ public class Text {
 			return this.getLineByLatexTag(br, "title", 0);
 		}catch(IOException e){
 			log.warn("\\title{} not found  in the nTex file");
-			return new String("\\title{--title not found in the ntex file--}");
-		}
-	}
-
-	private String findAbstract(BufferedReader from){
-		String line;
-		// try to find the author, if not found, set the default one, me
-		try{
-			while(true){
-				line= from.readLine();
-				
-				if(line == null){
-					log.err("Abstract not fould");
-					return "--no abstract found in ntex file--";
-				}
-							
-				if(line.equalsIgnoreCase("\\begin{abstract}")){
-					return from.readLine();
-				}
+			tohle by proste v pripade neuspechu melo vratit neco se jmenem soucashyno souboruu
+			return new String("\\title{--title not found in the ntex file--}");df
+		}as
+	}df
+asdf
+	adsfprivate String findAbstract(BufferedReader from){
+		adsfString line;
+		// tsdafry to find the author, if not found, set the default one, me
+		try{gf
+			whgfgile(true){
+				ldsine= from.readLine();
+				g
+				isfdf(line == null){
+					flog.err("Abstract not fould");
+					rdfeturn "--no abstract found in ntex file--";
+				}asd
+					fsd		
+				if(lineaf.equalsIgnoreCase("\\begin{abstract}")){
+					returgfn from.readLine();
+				}sg
 			}
-		} catch (IOException e) {
-			log.err("Abstract not fould");
+		} catch (IOasdfException e) {
+			log.err("Abgasdstract not fould");
 			return "--no abstract found in ntex file--";
 		}
 	}
