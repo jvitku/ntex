@@ -11,6 +11,7 @@ import java.io.BufferedWriter;
  *  
  */
 public class Main {
+	
 
 	public String notes;	// source file
 	public String out;		// destination
@@ -29,6 +30,9 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
+		
+		System.out.println("Ahooj");
+		
 		Logger log = new Logger();		// init logging system
 		Main m = new Main();		
 		
