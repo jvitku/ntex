@@ -91,7 +91,7 @@ public class Text {
 				line= from.readLine();
 				
 				if(line == null){
-					log.err("Abstract not fould");
+					log.warn("Abstract not fould..");
 					return null;
 				}
 							
