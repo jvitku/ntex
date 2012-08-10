@@ -76,7 +76,7 @@ public class Text {
 			return this.getLineByLatexTag(br, "title", 0);
 		}catch(IOException e){
 			log.warn("\\title{} not found  in the nTex file");
-			return new String("\\title{--title not found in the "+name+ "--}");
+			return new String("\\title{--title not found in the '"+name+ "'--}");
 		}
 	}
 
@@ -103,7 +103,13 @@ public class Text {
 	}
 	
 	public void copyAbstract(BufferedReader from, BufferedWriter to){
+		System.out.println("abstraaaaaaaaaaaaaaaaaa ");
 		String abs = this.findAbstract(from);
+		if(abs == null){
+			System.out.println("so abstract not found, does not matter.. :-)");
+			abs = "\\begin{abstract}\n .. \n \\end{abstract}\n";
+		}
+			
 		this.writeAbstract(to, abs);
 	}
 	
