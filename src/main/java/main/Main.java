@@ -36,6 +36,17 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+				
+>>>>>>> 0217eb3... zadana prvni chyba
+=======
+		System.out.println("Ahooj");
+		
+		
+		
+>>>>>>> 6ad5513... Backed out of changeset 5:77914f93f7fa  (tj melo by se do vsech budoucich verzi promitnout opraveni tehle chyby)
 		Logger log = new Logger();		// init logging system
 		Main m = new Main();		
 		
@@ -123,7 +134,15 @@ public class Main {
 		}
 	}
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
 	public void parse(String name, BufferedReader ntex,BufferedReader temp, 
+=======
+	public void parse(BufferedReader ntex, BufferedReader temp, 
+>>>>>>> 0217eb3... zadana prvni chyba
+=======
+	public void parse(BufferedReader ntex,BufferedReader temp, 
+>>>>>>> 6ad5513... Backed out of changeset 5:77914f93f7fa  (tj melo by se do vsech budoucich verzi promitnout opraveni tehle chyby)
 			BufferedWriter wr, Logger log){
 		
 		Text t = new Text(log);

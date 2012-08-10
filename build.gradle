@@ -8,7 +8,7 @@ task wrapper(type: Wrapper) {
 
 
 //	tohle je metoda ktera vyrobi jar do build/libs s timhle manifestem
-version = '1.1'
+version = '2.0'
 jar {
     manifest {
         attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'NTexProject', 'Version': version 
@@ -25,7 +25,9 @@ uploadArchives {
     }
 }
 
-
+// Create the runnable application from this project into build/lib/bin.. ? [./gradlew installApp]	
+apply plugin: 'application'
+mainClassName = 'main.Main'
 
 //	dependency test
 task out(dependsOn: uploadArchives) << {
