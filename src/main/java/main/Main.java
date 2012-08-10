@@ -33,8 +33,6 @@ public class Main {
 		
 		System.out.println("Ahooj");
 		
-		
-		
 		Logger log = new Logger();		// init logging system
 		Main m = new Main();		
 		
