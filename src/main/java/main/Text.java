@@ -71,12 +71,12 @@ public class Text {
 			}
 	}
 	
-	public String getTitle(BufferedReader br){
+	public String getTitle(String name, BufferedReader br){
 		try{
 			return this.getLineByLatexTag(br, "title", 0);
 		}catch(IOException e){
 			log.warn("\\title{} not found  in the nTex file");
-			return new String("\\title{--title not found in the ntex file--}");
+			return new String("\\title{--title not found in the "+name+ "--}");
 		}
 	}
 

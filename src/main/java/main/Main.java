@@ -49,7 +49,8 @@ public class Main {
 		if(ntex == null || temp == null || wr == null)
 			return;
 
-		m.parse(ntex, temp, wr, log);
+		// parse the input ntex file, if no \{title} tak found, append also file name
+		m.parse(m.notes, ntex, temp, wr, log);
 		
 		m.conclusion(log);
 	}
@@ -109,12 +110,12 @@ public class Main {
 		}
 	}
 	
-	public void parse(BufferedReader ntex,BufferedReader temp, 
+	public void parse(String name, BufferedReader ntex,BufferedReader temp, 
 			BufferedWriter wr, Logger log){
 		
 		Text t = new Text(log);
 		
-		String title = t.getTitle(ntex);
+		String title = t.getTitle(name,ntex);
 		String author = t.copyIntro(temp, wr);
 		
 		Files.writeLine(wr, title, log);
