@@ -31,7 +31,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-				
+		System.out.println("Ahooj");
+		
+		
+		
 		Logger log = new Logger();		// init logging system
 		Main m = new Main();		
 		
@@ -108,9 +111,8 @@ public class Main {
 		}
 	}
 	
-	public void parse(BufferedReader ntex, BufferedReader temp, 
+	public void parse(BufferedReader ntex,BufferedReader temp, 
 			BufferedWriter wr, Logger log){
-		muhe heeee 
 		
 		Text t = new Text(log);
 		
