@@ -1,0 +1,24 @@
+#!/bin/sh
+clear
+echo "
+
+
+
+"
+echo $PWD
+
+
+NAME='HANNS_-_prezentace_minimum'
+echo $NAME
+echo "====================== nTex to LaTex   ===================="
+java -jar ntex.jar -name $NAME
+
+echo "====================== LaTex to PDF 1 ====================="
+echo $NAME'.tex'
+TEXNAME=$NAME'.tex'
+
+pdflatex $TEXNAME
+echo "====================== LaTex to PDF 2 ====================="
+pdflatex $TEXNAME
+
+echo "====================== Done ==============================="

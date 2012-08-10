@@ -1,0 +1,178 @@
+\title{Poznámky z knihy Evolving Brains}
+\author{Jaroslav Vítků}
+
+\begin{abstract}
+Poznámky slouží jako podklad ke zkoušce z předmětu Evoluce Nerového Systému na Univerzitě Karlově. Josu to vypsané poznámky z knihy Johna Allmana \cite{kniha}. Další poznámky (z přednášek) jsou umístěny ve složce pro předmět, jak v textové podobě, tak z pozdějších přednášk přímo ve slidech. Tento text je tříděn hlavně podle kapitol v knize. 
+\end{abstract}
+
+\section{Brain Basics}
+
+-nejjednodussi organismus ktery projevuje znamky:
+	-uceni
+	-pameti
+	-rozhodovani
+	-kontrola toku informaci
+	
+	je E.coli, jednobunecna bakterie pritomna treba ve strevech
+		-umi pouze 2 pohyby (dopredu, prekulit se), ale integruje data z vice nez 12ti senzoru
+		
+-nervous systems are like hybrid computers that utilize both analog and digital signals and this gain advantages offered by both modes of computation ....
+
+-komunikace pomoci akcnich potencialu je pritomna v jellyfish - meduze
+	-meduzy jsou nejjednodussi zvirata s nervovou soustavou
+
+-uplne puvodni pradyby prisly na to ze si muzou obalit axony tukem - myelinem
+	-to hodne prispelo k rozvoji vetsich mozku - lepsi prenos signalu - dal
+	
+-animals with large brains are rare
+	-there are big costs for brains
+	-brain must compete with other body organs for the limited amount of energy available
+	-this is powerful constraint on the evolution of large brains
+	
+	-large brains demand also long time to mature
+		-this decreases the rate with which can be animals reproduced
+		-and it requires living in a groups - communication...
+		
+		
+\section{Comparing Brains}
+
+
+nejjednodussi moznost:
+	-porovnvat absolutni vahu 
+		-neumime vsak dobre urcit co k cemu v mozku je, proto je to nepresne
+	-provnavat na jedne ose vahu mozku, na druhe ose vahu zvirete
+		-na ose Y vaha mozku, na ose X vaha zvirete, cim vic vlevo nahore, tim lip \f{relative,12}
+		-diky tomu dostaneme typy mozku do jednoznacnych polygonu
+	
+		-nejvetsi mozky (stejne tak jako neocortex) maji savci
+		-obecne vetsi mozky teplokrevna zvirata (potrebuji se umet o sebe postarat-udrze teplotu)
+		-nejvetsi mozky z ryb maji zraloci a rejnoci, takze velikost mozku je casto spjata s dravosti 
+			-zvire bud v klidku zere listi a je hluopy, nebo vymejsli jak lip ulovit zvire a je chytry
+		-pak jsou taky relativne chytry ptaci (ale maj jinak postavenej mozek)
+		-nejvetsi rozdily mezi rybami jsou mezi kostnatymy rybami, je to tim ze je jich 25 000 druhu
+			-prikladem je elephant-nosed fish \f{elephant,5,Elephant nosed fish, orientuje se pomoci elektrickych signalu. proto ma vyvinutou specifickou oblast mozku - jina struktura}, ktera se orientuje pomoci elektrickych signalu - velky mozek
+
+
+serotonin:
+	-dulezity pro evoluci mozku
+	-serotogenicky system 500 milion let stary - zachovan v evoluci porat
+
+	-axony techto neuronu uvolnuji serotonin
+	-v mozku jich je jenim asi 100 000 (miliontina z celku)
+	-jsou ale huste propojeny vsude kolem a tak i presto ovlivnuji funkci prakticky kaudeho neuronu v mozku
+	
+	-serotonin ovlivnuje krevni tlak, zazivani a tak
+
+mutace DNA:
+	-jsou zmeny specifickych aminokyselin na danych pozicich v DNA sekvenci \f{chrom,8}
+	-mutace se objevuji s pravidelnosti o periode 1 milion let
+	-tim padem starsi casti systemu maji vic mutaci (vic obmen)
+
+	-"molekularni hodiny" jsou velmi dulezite pri odhadu skokovych zmen v evoluci mozku
+
+
+serotonin - priklad - Barry Jacobs: 
+	-aktivita serotoninovych neuronu je tesne spjata s vybuzenim zvirete
+	-viz obrazek kocky \f{cat,10,Souvislost aktivity serotoninovych neuronu s aktivitou zvirete} 
+
+	-aktivita serotoninovych neuronu prudce stoupne PRAVE pred svalovou aktivitou zvirete
+	-pokud je zvire hodne aktivni, jsou i serotoninove neurony aktivni, naopak v REM spanku, kdy je vetsina svalu neaktivni, jsou i tyto neurony neaktivni
+
+	-aktivita serotogeninovych neuronu koreluje s fyzickou aktivitou zvirete, bylo to namereno i u ryb
+	-serotoninove neurony jsou tedy rizeny povelem pro svalovou aktivitu
+	
+	-serotonin funguje i jako stabilizator mozkove aktivity (napriklad ma neco spolecneho s obscesivne-kompulzivni chorobou)
+
+	-vliv v amygdale a orbital-frontal cortexu (ktere jsou spjaty za socialni chovani)	
+		-ma dobry vliv na socialni chovani(pece o vzhled) a negativni na antisocialni (fighting)
+		-diky tomu serotonin moduluje chovani k ostatnim jedincum
+
+	-serotonin zapricinuje vetsi riskovani v prstredi
+		-vyssi hladina serotoninu - vetsi spokojenost, mene riskovani	
+		-mensi spokojenost - zvire vic riskuje (low serotonin monkey - predator sentinel)
+
+	-serotoninovy system tedy slouzi k modulaci sil spojeni mezi neurony tak, aby produkovaly stabilni chovani v rozdilnych situacich
+	-je to tak dulezite ze se tenhle system zachoval 500 milionu let
+	-snizeni serotoninu ma za nasledek zvyseni riskovani - ohrozeni a odmena - coz zvysuje adaptivitu zvirete
+	-snizeni serotoninu ale vede k mensi spokojenosti a k ruznym porucham (napriklad spanku, deprese apod)
+	-je to dulezita slozka membran nervovych bunek
+	-da se najit ve vsech slozkach potravy bohate na energii
+	-pokud ma zvire malo serotoninu, muze byt vycerpano hypersenzitivitou
+
+
+neocortex:
+	-nervova tkan pokryvajici vetsinu mozku
+	-serotogenicky system - u vetsiny obratlovcu stejny
+	-neocortex - nachazi se pouze u savcu
+	-Mozková kura (kura velkého mozku - neopallium - neocortex) neocortex by mel byt casti mozkove kury
+	-u cloveka nejvyznamnejsi cast mozku
+	-behem fylogenetickeho vyvoje se zvetsuje kortikalizace funknci
+		-do mozkove kury tedy prichazi stale vetsi mnozstvi aferentaci (dostredivych vlaken)
+		-a pod kontrolu vzruchu, ktere z kury vycahzeji se dostava cim dal vic telesnych funkci (zvire je sikovnejsi)
+
+	-u cloveka 200 000 cm2
+	-koreluje s velikosti tela, u nekterych velryb se zubama je prekvapive velky
+
+	-velikost neocortexu je omezena velikosti hlavy, ta je omezena komplikacemi pri porodu, proto vrasneni
+
+
+Frenologie:
+	-byl obor, který predpokládal a zkoumal souvislost stavby lebky s duševními schopnostmi a charakterovými rysy. 
+	-Byl populární zejména v 19. století, do zacátku 20. století však byl zavrřen jako pseudoveda. 
+	-Nekteré predstavy o funkcní specializaci jednotlivých cástí mozku však od ní úspešně prevzala moderní neuroveda. 
+	-jednotlive casti mozku se roztahnout kdyz funguji, podle toho se meri jejich aktivita
+
+	-experimentalni neurobiologie, nekdo se pokusil odejmout casti mozku zvirat aby potvrdil tohle, nepovedlo se
+
+Neocortex:
+
+	-Hughlings Jackson's clinical observations relate to three fundamental properties of the neocortex. 
+		-1) the neocortex contains topographic maps
+		-2) the parts of these maps which are used the most have the largest representations
+		-3) the neocortex has a key role in the genesis of epilepsy.
+
+	-The cortical circuitry is highly plastic in that 
+	-it can change its functional organization in response to experience, and it is crucial for memory formation and storage.
+
+	-price of this cortical plasticity is the risk of the wildly uncontrolled oscillations in neural activity that occur in epilepsy.
+
+	-mnoho pokusu s motor-cortex, pri stimulaci slabymi elektrickymi pulzy se hybou svaly => slozite topograficke mapy pro ruzne svaly
+	-opice: piti z male studny (sikovnost) a piti z velke studny (pohoda)
+		-sikovne opice mely o hodne vetsi kortikalni reprezentaci pro prsty nez ty druhe
+		-je to videt i u lidi kteri hraji na strunny nastroj nebo u slepcu - Brailovo pismo 
+		-lepsi a presnejsi kontrola = vetsi reprezentace v kortexu
+
+	
+	
+	
+hippocampus:
+	-oblibeny pro studie pameti
+
+
+
+Striatum (též corpus striatum, lat. žíhané jádro) 
+	-je hluboká oblast šedé hmoty uvnitr hemisfér koncového mozku. 
+	-Je to zrejme rozsahem nejvýznamnejší soucást tzv. bazálních ganglií
+
+	-Do striata smerují dráhy nejen z mozkové kury, ale i z nekterých subkortikálních (podkorových) center, thalamu a z mozkového kmene. 
+	-Z bazálních ganglií je to zrejme vubec nejvýznamnejší príjemce signálu z jiných cástí mozku. 
+	-Naopak z striata smerují dráhy do globus pallidus (nepocítáme-li ho do striata), ale i napr. do substantia nigra.
+
+Oblast globus pallidus (nekdy považovaná za samostatné jádro šedé hmoty stojící mimo striatum) hraje duležitou roli v ovládání pohybu, jelikož z neho smerují dráhy do retikulárních formací v mozkovém kmeni a (pres thalamus) i do pohybových center v mozkové kure. 
+
+
+
+\begin{literatura}{1}
+
+\bibitem{kniha}
+Allman J.: \emph{Evolving Brains}, Scientific American Library Paperback, 2000.
+
+\end{literatura}
+
+
+
+
+
+
+
+

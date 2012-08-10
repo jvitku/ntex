@@ -1,0 +1,21 @@
+
+\begin{abstract}
+Vybrane nastroje pro spravu zdrojovych kodu projektu HANNS, a postup jak je nainstalovat (pro OS Linux Ubuntu 12.04).
+\end{abstract}
+
+\section{Seznam pouzitych nastroju}
+
+-Mercurial
+
+
+\section{Mercurial}
+
+-For instalation of command line tool.. i don't remember, but try this: hg clone https://code.google.com/p/rosjava/ 
+-Tutorial for Mercurial (hg) tool is here: http://mercurial.selenic.com/guide/
+
+-For installation of Eclipse plugin I used HgEclipse from this location: http://javaforge.com/project/HGE
+	-ted testujeme odsazeni
+	-neceho dalsiho
+-neco jihyo
+
+a nejaky konec
