@@ -5,9 +5,9 @@ public class Itemization {
 
 	
 	/**
-	 * tady jsem pridal tohle, test neceho
+	 * this converts tabulator specified hierarchical structure of the document to a LaTeX itemization
+	 * 
 	 * @author j
-	 *
 	 */
 	
 	
@@ -50,12 +50,16 @@ public class Itemization {
 		// for all lines
 		for(int i=0; i<lines.length; i++){
 			// check whether to interrupt itemization
-			lines[i] = this.handleItemEnders(lines[i]);
+			System.out.println("lines:["+i+"]: "+lines[i]);
+			lines[i] = this.handleItemEndersII(lines, i);
+
+			System.out.println("lines:["+i+"]: "+lines[i]);
+			//lines[i] = this.handleItemEnders(lines[i]);
 			
 			// count tabs and check for "-" symbol or a free line
 			mark = countTabs(lines[i]);
 			lines[i] = mark.line;	// line with removed tabs and "-"
-			if(mark.comment){ // just gnore comments..
+			if(mark.comment){ // just ignore comments..
 				lines[i] = mark.line;
 			}else if(mark.freeLine){
 				if(itemizing && !willEnd(lines,i))
@@ -150,17 +154,52 @@ public class Itemization {
 		// for all the following lines:
 		// if we will find itemization breaker sooner than 
 		// non-white character, we do not want white-spaces
-		if(actual == lines.length-1)
+		if(actual == lines.length-1){
+			System.out.println("WE: end of document, returning T");
 			return true;
+		}
 		
 		String tmp;
 		for(int i=actual+1; i<lines.length; i++){
-			if(this.hasItemEnder(lines[i]))
+			System.out.println("i: "+i);
+			if(this.hasItemEnder(lines[i])){
+				System.out.println("WE: found item ender, T");
 				return true;
+			}
 			 
-			tmp = lines[i].replaceAll("\\S", "x");
-			if(!lines[i].equals(tmp))
+			tmp = lines[i].replaceAll("\\S", "x"); //replace all non-white-spaces with x
+			if(!lines[i].equals(tmp)){
+				System.out.println(lines[i]);
+				System.out.println("i: "+i+" length: "+(lines.length-1));
+				System.out.println(tmp);
+				System.out.println("WE: f");
 				return false;
+			}
+		}
+		System.out.println("WE: t");
+		return true;
+	}
+	
+	/**
+	 * determine whether the actual one is the last (non-white) line in the document
+	 * @param lines
+	 * @param actual
+	 * @return
+	 */
+	private boolean documentWillEnd(String[] lines, int actual){
+		if(actual == lines.length){
+			System.out.println("t "+actual+" "+lines.length );
+			return true;
+		}
+		String tmp;
+		for(int i=actual+1; i<lines.length; i++){
+			tmp = lines[i].replaceAll("\\S", "x"); //replace all non-white-spaces with x
+			
+
+			System.out.println("DWE loop: "+i+" "+lines[i] +"\n"+tmp);
+			if(!lines[i].equals(tmp)){
+				return false;
+			}
 		}
 		return true;
 	}
@@ -198,6 +237,34 @@ public class Itemization {
 	}
 	
 	/**
+	 * item ender means: is there an item ender, or will follow the end of file
+	 * @param line
+	 * @return
+	 */
+	private String handleItemEndersII(String[] lines, int which){
+		String line = lines[which];
+
+		
+		// if there is some itemization ender (or the EOF will follow), decrease itemization to 0
+		if(this.hasItemEnder(lines[which]) && itemizing ){
+			
+			//line = this.decreaseItemizationTo(line, 0);
+			line = this.decreaseBy(lines[which], this.actualItemDepth+1);
+			
+			this.itemizing = false;			// no itemization initialized
+		}
+		else if(this.documentWillEnd(lines, which) && this.itemizing){
+					 System.out.println("DOcument will end now!" +lines[which]);
+
+						line = this.decreaseByAfterLine(lines[which], this.actualItemDepth+1);
+						
+						this.itemizing = false;			// no itemization initialized
+		}
+		System.out.println("WE back: "+line);
+		return line;
+	}
+	
+	/**
 	 * decrease the actual depth by given number of ..
 	 * @param line
 	 * @param by
@@ -230,6 +297,32 @@ public class Itemization {
 		}
 	}
 	
+	private String decreaseByAfterLine(String line, int by){
+		String tmp = "";
+		String tabs = this.makeTabs(); // actual beginning of the line
+		if(!itemizing)
+			return line;
+		
+		// if this, then adjust depth..
+		if(by > this.actualItemDepth){
+			this.itemizing = false;
+			by = this.actualItemDepth+1;
+		}
+			
+		// from the actual depth by "by" steps..
+		for(int i=0; i<by; i++){
+			tabs = this.makeTabs();
+			tmp = tmp+tabs+it.endItem;
+			this.actualItemDepth--;
+		}
+		//return tmp + this.makeTabs()+ "\t" +line;
+		if(this.itemizing)
+			return line +"\n"+ tmp;
+		else{
+			this.actualItemDepth = 0;
+			return line+ "\n"+tmp;
+		}
+	}
 	
 	private boolean hasItemEnder(String line){
 		String tmp;
