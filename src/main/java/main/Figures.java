@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public class Figures {
 
+	
 	// figure setup
 	public final String marker = "\\\\f\\{";
 	public final String placement = "ht";
