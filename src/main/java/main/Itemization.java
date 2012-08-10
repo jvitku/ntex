@@ -4,6 +4,13 @@ public class Itemization {
 	
 
 	
+	/**
+	 * tady jsem pridal tohle, test neceho
+	 * @author j
+	 *
+	 */
+	
+	
 	public class Itemize{
 		public String addItem = "\\begin{itemize}\n";
 		public String item = "\t\\item ";
