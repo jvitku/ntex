@@ -11,6 +11,7 @@ public class Text {
 		this.log = log;
 	}
 	
+	
 	/**
 	 * copy the first part of the template to the resulting stream
 	 * @param from
