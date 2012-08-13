@@ -52,7 +52,7 @@ public class Itemization {
 			// check whether to interrupt itemization
 			this.pln(i+"before: ", 6,i, lines);
 			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------eb"+this.itemizing);
-			lines[i] = this.handleItemEndersII(lines, i);
+			lines[i] = this.handleItemEndersIII(lines, i);
 			this.pln(i+"after: ", 6,i, lines);
 
 			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------ea "+this.itemizing);
@@ -96,6 +96,8 @@ public class Itemization {
 					}	
 				}
 			}
+
+			lines[i] = this.checkDocumentEnd(lines, i);
 		}
 		
 		// compose the output string and return
@@ -272,6 +274,35 @@ public class Itemization {
 		}
 		System.out.println("WE back: "+line+" || "+this.itemizing);
 		return line;
+	}
+	
+	private String handleItemEndersIII(String[] lines, int which){
+		String line = lines[which];
+		
+		// if there is some itemization ender (or the EOF will follow), decrease itemization to 0
+		if(this.hasItemEnder(lines[which]) && itemizing ){
+			
+			//line = this.decreaseItemizationTo(line, 0);
+			line = this.decreaseBy(lines[which], this.actualItemDepth+1);
+			
+			this.itemizing = false;			// no itemization initialized
+		}
+		System.out.println("WE back: "+line+" || "+this.itemizing);
+		return line;
+	}
+	
+	private String checkDocumentEnd(String [] lines, int which){
+		String line = lines[which];
+
+		if(this.documentWillEnd(lines, which) && this.itemizing){
+			 System.out.println("xxxxxxxxxxxxxxx DOcument will end now!" +lines[which]);
+
+				line = this.decreaseByAfterLine(lines[which], this.actualItemDepth+1);
+				
+				this.itemizing = false;			// no itemization initialized
+		}
+		return line;
+
 	}
 	
 	/**
