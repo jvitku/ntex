@@ -50,10 +50,12 @@ public class Itemization {
 		// for all lines
 		for(int i=0; i<lines.length; i++){
 			// check whether to interrupt itemization
-			System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------eb"+this.itemizing);
+			this.pln(i+"before: ", 6,i, lines);
+			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------eb"+this.itemizing);
 			lines[i] = this.handleItemEndersII(lines, i);
+			this.pln(i+"after: ", 6,i, lines);
 
-			System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------ea "+this.itemizing);
+			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------ea "+this.itemizing);
 			//lines[i] = this.handleItemEnders(lines[i]);
 			
 			// count tabs and check for "-" symbol or a free line
@@ -77,7 +79,10 @@ public class Itemization {
 						lines[i] = this.addItem(lines[i]);
 					}else if(mark.nTabs > this.actualItemDepth){
 						System.out.println("aaa");
+						this.pln("aaa b:", 6, i, lines);
 						lines[i] = this.addDeeperItem(lines[i], mark.nTabs);
+
+						this.pln("aaa a:", 6, i, lines);
 					}else if(mark.nTabs < this.actualItemDepth){
 						lines[i] = this.addShallowerItem(lines[i], mark.nTabs);
 					}
@@ -389,6 +394,24 @@ public class Itemization {
 			this.item = item;
 			this.freeLine = free;
 			this.line = line;
+		}
+	}
+	
+	/**
+	 * print out given number of actual lines
+	 * @param many
+	 * @param lines
+	 */
+	private void pln(String message, int many, int actual, String [] lines){
+		int start;
+		if((actual-many)<0){
+			start = 0;
+			many = actual;
+		}
+		else
+			start = actual-many;
+		for(int i=start; i<=actual; i++){
+			System.out.println(message+"|"+i+"|"+lines[i]);
 		}
 	}
 	
