@@ -79,11 +79,11 @@ public class Main {
 			else if(args[poc].equalsIgnoreCase("-debug"))
 				log.debug = true;
 			else if(args[poc].equalsIgnoreCase("-help")){
-				TemplateAndHelp t = new TemplateAndHelp();
+				TemplateAndHelp t = new TemplateAndHelp(log);
 				t.help();
 				return false;
 			}else if(args[poc].equals("-template")){
-				TemplateAndHelp t = new TemplateAndHelp();
+				TemplateAndHelp t = new TemplateAndHelp(log);
 				t.template();
 				return false;
 			}
