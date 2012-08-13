@@ -73,6 +73,15 @@ public class Main {
 			}
 			else if(args[poc].equalsIgnoreCase("-debug"))
 				log.debug = true;
+			else if(args[poc].equalsIgnoreCase("-help")){
+				TemplateAndHelp t = new TemplateAndHelp();
+				t.help();
+				return false;
+			}else if(args[poc].equals("-template")){
+				TemplateAndHelp t = new TemplateAndHelp();
+				t.template();
+				return false;
+			}
 			else{
 				log.err("Unrecognized parameter: "+args[poc]+ " "+args[poc+1]);
 				this.printUsage(log);
@@ -91,7 +100,7 @@ public class Main {
 	private void printUsage(Logger log){
 		log.err("Usage: If no argument found, I am looking for files: '"+defName+".ntex' and '"+template+
 				"' and will create file '"+defName+".tex'");
-		log.err("Usage: arguments are: \n\t-name name\n\t-debug y");
+		log.err("Usage: arguments are: \n\t-name name\n\t-debug y\n\t-help y");
 	}
 	
 	private void conclusion(Logger log){
