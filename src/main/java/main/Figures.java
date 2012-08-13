@@ -200,6 +200,7 @@ public class Figures {
 			if(s.length==2){
 				// try to parse a single double, if OK, there is no label
 				try{
+					@SuppressWarnings("unused")
 					double w = Double.parseDouble(s[1]);
 					return this.nolabel;
 				}catch(Exception e){

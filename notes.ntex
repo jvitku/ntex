@@ -10,12 +10,12 @@ Again some text
 \subsection{Some subsection}
 Some \b{bold} and \i{italic} text.
 -In this sentence we use citation \cite{kniha}.
-	-Here is reference to the picture \f{chrom,10,This is illustration of chromosone}.
+	-Here is reference to the picture \f{a,3,This is illustration of chromosone}.
 
 
 	-Here is the note with the same depth but moved away from the previous using enter..
-	-Here is the reference to already used picture \f{chrom}.
-		-Note that the specification of width and text under the picture is not necessary, see this: \f{elephant, Fishes..}
+	-Here is the reference to already used picture \f{a}.
+		-Note that the specification of width and text under the picture is not necessary, see this: \f{b, Fishes..}
 
 
 

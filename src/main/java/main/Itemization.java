@@ -51,7 +51,7 @@ public class Itemization {
 		for(int i=0; i<lines.length; i++){
 			// check whether to interrupt itemization
 			//this.pln(i+"before: ", 6,i, lines);
-			lines[i] = this.handleItemEndersIII(lines, i);
+			lines[i] = this.handleItemEnders(lines, i);
 			//this.pln(i+"after: ", 6,i, lines);
 			
 			// count tabs and check for "-" symbol or a free line
@@ -215,47 +215,8 @@ public class Itemization {
 	 * if so, close all actual itemization and return the result 
 	 * @param line
 	 * @return result
-	 */
-	private String handleItemEnders(String line){
-		if(this.hasItemEnder(line) && itemizing){
-			
-			//line = this.decreaseItemizationTo(line, 0);
-			line = this.decreaseBy(line, this.actualItemDepth+1);
-			
-			this.itemizing = false;			// no itemization initialized
-		}
-		return line;
-	}
-	
-	/**
-	 * item ender means: is there an item ender, or will follow the end of file
-	 * @param line
-	 * @return
-	 */
-	private String handleItemEndersII(String[] lines, int which){
-		String line = lines[which];
-
-		
-		// if there is some itemization ender (or the EOF will follow), decrease itemization to 0
-		if(this.hasItemEnder(lines[which]) && itemizing ){
-			
-			//line = this.decreaseItemizationTo(line, 0);
-			line = this.decreaseBy(lines[which], this.actualItemDepth+1);
-			
-			this.itemizing = false;			// no itemization initialized
-		}
-		else if(this.documentWillEnd(lines, which) && this.itemizing){
-					 System.out.println("xxxxxxxxxxxxxxx DOcument will end now!" +lines[which]);
-
-						line = this.decreaseByAfterLine(lines[which], this.actualItemDepth+1);
-						
-						this.itemizing = false;			// no itemization initialized
-		}
-		System.out.println("WE back: "+line+" || "+this.itemizing);
-		return line;
-	}
-	
-	private String handleItemEndersIII(String[] lines, int which){
+	 */	
+	private String handleItemEnders(String[] lines, int which){
 		String line = lines[which];
 		
 		// if there is some itemization ender (or the EOF will follow), decrease itemization to 0
@@ -405,7 +366,7 @@ public class Itemization {
 	 * @param many
 	 * @param lines
 	 */
-	private void pln(String message, int many, int actual, String [] lines){
+	public void pln(String message, int many, int actual, String [] lines){
 		int start;
 		if((actual-many)<0){
 			start = 0;

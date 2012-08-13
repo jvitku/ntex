@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Made by Jaroslav Vitku
+ * 
+ * stored here: https://bitbucket.org/jvitku/ntexproject/changesets
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
