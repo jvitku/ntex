@@ -189,7 +189,7 @@ public class Figures {
 			double w = Double.parseDouble(s[1]);
 			return Double.toString(w);
 		}catch(Exception e){
-			log.warn("cannot parse the width for fig named: "+s[0]);
+			//log.warn("cannot parse the width for fig named: "+s[0]);
 			return this.defW;
 		}
 	}

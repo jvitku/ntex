@@ -1,12 +1,18 @@
 \title{Title of the document}
+
+\author{Name of Author}
+
 \begin{abstract}
- 	add some abstract in one line
+	Add some abstract in one line.
 \end{abstract}
+
 \section{Some section}
 Some text
 	-some itemization
 		-Some deeper itemization
 Again some text
+
+
 \subsection{Some subsection}
 Some \b{bold} and \i{italic} text.
 -In this sentence we use citation \cite{kniha}.
@@ -20,6 +26,7 @@ Some \b{bold} and \i{italic} text.
 
 
 \begin{literatura}{1}
+
 \bibitem{kniha} 
 	Allman J.: \emph{Evolving Brains}, Scientific American Library Paperback, 2000.
 \end{literatura}

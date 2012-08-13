@@ -40,7 +40,9 @@ public class Text {
 		}
 		try{
 			// try to find the author, if not found, set the default one, me
-			return this.getLineByLatexTag(from, "author",0);
+			String tmp = this.getLineByLatexTag(from, "author",0);
+			System.out.println("author is: "+tmp);
+			return tmp;
 		} catch (IOException e) {
 			log.warn("could not find the \\author{??} in the template");
 			return new String("\\author{Jaroslav Vitku}");
