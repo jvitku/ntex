@@ -56,7 +56,7 @@ public class TemplateAndHelp {
 			"-\\title{Document name}\n-\\author{Your Name}\n"+
 			"-\\b{bold text}\n-\\{italic text}\n"+
 			"-\\section{section name}\n-\\subsection{subsection name..}\n"+
-			"-\\cite{book}           	\tcitaiton of the book\n"+
+			"-\\cite{book}           	\t citaiton of the book\n"+
 			"-\\f{name,10,description}   \t add the figure specified by:\n"+
 			"\t-name\n\t-width (optional)\n\t-description (optional)\n"+
 			"-\\f{name}                  \t reference to already existing figure\n";
@@ -64,8 +64,8 @@ public class TemplateAndHelp {
 	private final String p3 = "Literature:\n"+
 			"-based on the LaTeX formatting\n"+
 			"-at the end of file add e.g. this:\n\n"+
-			"\n\n\\begin{literatura}{1}\n\\bibitem{kniha} " +
-			"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n \\end{literatura}\n";
+			"\\begin{literatura}{1}\n\\bibitem{kniha} " +
+			"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n\\end{literatura}\n";
 	
 	
 	

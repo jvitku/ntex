@@ -18,13 +18,13 @@ public class Text {
 	 * @param to
 	 * @returns String defining the default author of the text (saved in template.tex) 
 	 */
-	public String copyIntro(BufferedReader from, BufferedWriter to){
+	public String copyIntro(BufferedReader from, BufferedWriter to, BufferedReader br){
+				
 		String line;
 		try{
 			// while we can read, copy the lines
 			while(true){
 				line= from.readLine();
-				//System.out.println(line);
 				if(line.equalsIgnoreCase("\\begin{document}")){
 					to.write(line);
 					to.newLine();
@@ -40,9 +40,12 @@ public class Text {
 		}
 		try{
 			// try to find the author, if not found, set the default one, me
-			String tmp = this.getLineByLatexTag(from, "author",0);
-			System.out.println("author is: "+tmp);
-			return tmp;
+			
+			String author = this.getNameFromNTex(br);
+			if(author == null)
+				author = this.getLineByLatexTag(from, "author",0);
+			System.out.println("author is: "+author);
+			return author;
 		} catch (IOException e) {
 			log.warn("could not find the \\author{??} in the template");
 			return new String("\\author{Jaroslav Vitku}");
@@ -71,6 +74,16 @@ public class Text {
 					if(s[which].equalsIgnoreCase("\\"+tag))
 						return line;
 			}
+	}
+	
+	public String getNameFromNTex(BufferedReader br){
+		try{
+			return this.getLineByLatexTag(br, "author", 0);
+		}catch(IOException e){
+			log.warn("\\author{} not found  in the nTex file, " +
+					"will try to parse it from template file");
+			return null;
+		}
 	}
 	
 	public String getTitle(String name, BufferedReader br){

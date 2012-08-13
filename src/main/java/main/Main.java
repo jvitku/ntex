@@ -128,7 +128,7 @@ public class Main {
 		Text t = new Text(log);
 		
 		String title = t.getTitle(name,ntex);
-		String author = t.copyIntro(temp, wr);
+		String author = t.copyIntro(temp,wr,ntex);
 		
 		Files.writeLine(wr, title, log);
 		Files.writeLine(wr, author, log);
