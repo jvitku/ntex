@@ -50,10 +50,10 @@ public class Itemization {
 		// for all lines
 		for(int i=0; i<lines.length; i++){
 			// check whether to interrupt itemization
-			System.out.println("lines:["+i+"]: "+lines[i]);
+			System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------eb"+this.itemizing);
 			lines[i] = this.handleItemEndersII(lines, i);
 
-			System.out.println("lines:["+i+"]: "+lines[i]);
+			System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------ea "+this.itemizing);
 			//lines[i] = this.handleItemEnders(lines[i]);
 			
 			// count tabs and check for "-" symbol or a free line
@@ -62,16 +62,21 @@ public class Itemization {
 			if(mark.comment){ // just ignore comments..
 				lines[i] = mark.line;
 			}else if(mark.freeLine){
+				System.out.println("jsme v else if, takze free line");
 				if(itemizing && !willEnd(lines,i))
 					lines[i] = this.makeTabs()+"\t\t"+space;
-			}
-			else{
+			}else{
+				System.out.println("jsme v else, takze se tu neco deje");
 				// new item?
 				if(mark.item){
+					System.out.println("new item");
 					// the same depth?
 					if(mark.nTabs == this.actualItemDepth){
+						System.out.println("mark.ntabs: actual: "
+								+this.actualItemDepth+ " l: "+lines[i]);
 						lines[i] = this.addItem(lines[i]);
 					}else if(mark.nTabs > this.actualItemDepth){
+						System.out.println("aaa");
 						lines[i] = this.addDeeperItem(lines[i], mark.nTabs);
 					}else if(mark.nTabs < this.actualItemDepth){
 						lines[i] = this.addShallowerItem(lines[i], mark.nTabs);
@@ -160,7 +165,7 @@ public class Itemization {
 		}
 		
 		String tmp;
-		for(int i=actual+1; i<lines.length; i++){
+		for(int i=actual+1; i<lines.length-1; i++){
 			System.out.println("i: "+i);
 			if(this.hasItemEnder(lines[i])){
 				System.out.println("WE: found item ender, T");
@@ -254,13 +259,13 @@ public class Itemization {
 			this.itemizing = false;			// no itemization initialized
 		}
 		else if(this.documentWillEnd(lines, which) && this.itemizing){
-					 System.out.println("DOcument will end now!" +lines[which]);
+					 System.out.println("xxxxxxxxxxxxxxx DOcument will end now!" +lines[which]);
 
 						line = this.decreaseByAfterLine(lines[which], this.actualItemDepth+1);
 						
 						this.itemizing = false;			// no itemization initialized
 		}
-		System.out.println("WE back: "+line);
+		System.out.println("WE back: "+line+" || "+this.itemizing);
 		return line;
 	}
 	
