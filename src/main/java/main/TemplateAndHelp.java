@@ -69,18 +69,18 @@ public class TemplateAndHelp {
 	
 	
 	
-	private final String temp1 = "\\title{Name of the document}\n\\author{Name of Author}\n"+
-	"\\begin{abstract}\n\tAbstract in one Line..\n\\end{abstract}\n"+
-	"\\section{Section}\nSome normal text..\n-itemized text\n-Some text in \\b{bold} and \\i{italics}.\n"+
-	"\t-higher level..\n\\subsection{Some subsection here}\n-Here is an example of some citation: \\cite{kniha}.\n"+
+	private final String temp1 = "\\title{Name of the document}\n\n\\author{Name of Author}\n\n"+
+	"\\begin{abstract}\n\tAbstract in one Line..\n\\end{abstract}\n\n"+
+	"\\section{Section}\n\nSome normal text..\n-itemized text\n-Some text in \\b{bold} and \\i{italics}.\n"+
+	"\t-higher level..\n\n\\subsection{Some subsection here}\n-Here is an example of some citation: \\cite{kniha}.\n"+
 	"\n\n-This item is separated by means of several enters from the above one\n"+
 	"-Here we add some figure \\f{a,2,Description of figure}\n"+	
 	"-Here is another reference to already placed figure \\f{a}\n"+
 	"\t-Note that you don't have to specify width or description to the figure \\f{b, something..}.\n" +
 	"\t-Type of figure is determined automatically,currently supported types are:\n" +
 	"\t\t-eps\n\t\t-png\n\t\t-jpg\n"+
-	"\n\n\\begin{literatura}{1}\n\\bibitem{kniha} " +
-	"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n \\end{literatura}";
+	"\n\n\\begin{literatura}{1}\n\n\\bibitem{kniha} " +
+	"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n\\end{literatura}";
 	
 	public void template(){
 		// is there folder for pictures?

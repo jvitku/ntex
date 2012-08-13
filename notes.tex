@@ -16,63 +16,62 @@
 
 \begin{document}
 
-\title{Title of the document}
-\author{Jaroslav Vítků}
+\title{Name of the document}
+\author{Name of Author}
 
 \maketitle
 
 \begin{abstract}
-	Add some abstract in one line.
+	Abstract in one Line..
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
 
 
 
-\section{Some section}
-Some text
+\section{Section}
+Some normal text..
+
 \begin{itemize}
-	\item 
+	\item itemized text
+	\item Some text in \textbf{bold} and \textit{italics}.
 	\begin{itemize}
-		\item some itemization
-		\begin{itemize}
-			\item Some deeper itemization
-		\end{itemize}
-	\end{itemize}
+		\item higher level..
+
 \end{itemize}
-Again some text
-
-
-\subsection{Some subsection}
-Some \textbf{bold} and \textit{italic} text.
+\end{itemize}
+\subsection{Some subsection here}
 
 \begin{itemize}
-	\item In this sentence we use citation \cite{kniha}.
+	\item Here is an example of some citation: \cite{kniha}.
+		\vspace{3mm}
+		\vspace{3mm}
+	\item This item is separated by means of several enters from the above one
+	\item Here we add some figure Obr.\ref{a} 
+
+	\begin{figure}[ht]
+		\centering
+			\includegraphics[width=2.0cm]{fig/a.jpg}
+		\caption{Description of figure}
+		\label{a}
+	\end{figure}
+
+	\item Here is another reference to already placed figure Obr.\ref{a} 
 	\begin{itemize}
-		\item Here is reference to the picture Obr.\ref{a}.
+		\item Note that you don't have to specify width or description to the figure Obr.\ref{b}.
 
 		\begin{figure}[ht]
 			\centering
-				\includegraphics[width=3.0cm]{fig/a.jpg}
-			\caption{This is illustration of chromosone}
-			\label{a}
+				\includegraphics[width=6.5cm]{fig/b.jpg}
+			\caption{ something..}
+			\label{b}
 		\end{figure}
 
-			\vspace{3mm}
-			\vspace{3mm}
-		\item Here is the note with the same depth but moved away from the previous using enter..
-		\item Here is the reference to already used picture Obr.\ref{a}.
+		\item Type of figure is determined automatically,currently supported types are:
 		\begin{itemize}
-			\item Note that the specification of width and text under the picture is not necessary, see this: Obr.\ref{b} 
-
-			\begin{figure}[ht]
-				\centering
-					\includegraphics[width=6.5cm]{fig/b.jpg}
-				\caption{ Fishes..}
-				\label{b}
-			\end{figure}
-
-
+			\item eps
+			\item png
+			\item jpg
 
 
 \end{itemize}

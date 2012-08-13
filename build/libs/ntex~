@@ -1,0 +1,21 @@
+#!/bin/sh
+clear
+echo "
+
+
+"
+echo $PWD
+
+#NAME='simplenotes'
+NAME='notes'
+echo $NAME
+echo "====================== Deploying files to the place ===================="
+
+echo "====================== Generating notes.ntex file  ====================="
+java -jar nTexProject-1.1.jar -template y
+
+echo "====================== Done ====================="
+
+echo "note: now you can:
+-edit the 'notes.ntex' file and/or
+-run the ./compile script in order to generate LaTeX and PDF files 

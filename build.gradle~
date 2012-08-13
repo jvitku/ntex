@@ -33,5 +33,5 @@ task out(dependsOn: uploadArchives) << {
 }
 
 task other << {
-    println "I'm not a default task!"
+    println "I'm doin' nothin' bro"
 }

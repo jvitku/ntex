@@ -105,7 +105,8 @@ public class Main {
 	private void printUsage(Logger log){
 		log.err("Usage: If no argument found, I am looking for files: '"+defName+".ntex' and '"+template+
 				"' and will create file '"+defName+".tex'");
-		log.err("Usage: arguments are: \n\t-name name\n\t-debug y\n\t-help y");
+		log.err("Usage: arguments are: \n\t-name name\n\t-debug y\n\t-help y\n" +
+				"\t-template y 	\t [generates the template file]");
 	}
 	
 	private void conclusion(Logger log){
