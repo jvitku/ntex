@@ -24,6 +24,7 @@ public class TemplateAndHelp {
 		
 	}
 	
+	// test
 	private final String scriptName = "compile";
 	private final String tempName = "notes.ntex";
 	private final String temp1 = "\\title{Name of the document}\n\\author{Name of Author}\n"+
