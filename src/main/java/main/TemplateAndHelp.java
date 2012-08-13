@@ -20,13 +20,55 @@ public class TemplateAndHelp {
 	}
 	
 	public void help(){
-		System.out.println("hellpig");
-		
+		System.out.println(separator+p0+separator+p1+
+				separator+p11+separator+p2+separator+p3+separator);
 	}
 	
-	// test
+	private final String separator = "\n\n======================";
+
 	private final String scriptName = "compile";
 	private final String tempName = "notes.ntex";
+
+	
+	private final String p0 = "What is it:\n"+
+			"-Tool for making fast (simply formatted) notes with picture support\n"+
+			"-Write notes into the text file '"+tempName+"'\n"+
+			"\n-Java application converts *.ntex file into *.tex file based on provided template files\n"+
+			"-Script '"+scriptName+"' does this:\n"+
+			"\t-Converts *.ntex file to *.tex file\n"+
+			"\t-Generates pdf file\n"+
+			"\t-Opens the pdf in pdf viewer";
+	
+	private final String p1 = "Basic Usage:\n"+
+			"-Initialize the folder for notes, run: 'ntex init\n"+
+			"-Can generate template ('"+tempName+"') by use of command:"+
+			" java -jar nTexProject-x.x.jar -template y\n"+
+			"-Edit the '"+tempName+"' file according to formatting rules\n"+
+			"-Run the '"+scriptName+"' in order to generate and open pdf";
+	
+	private final String p11 = "Structure of the document:\n"+
+			"-Document is structured by means of:\n"+
+			"\t-LaTeX abstract\n" +
+			"\t-LaTeX (sub)section commands\n"+
+			"\t-Structure is created by means of tabulators and '-' marker";
+	
+	private final String p2 = "Basic commands:\n"+
+			"-\\title{Document name}\n-\\author{Your Name}\n"+
+			"-\\b{bold text}\n-\\{italic text}\n"+
+			"-\\section{section name}\n-\\subsection{subsection name..}\n"+
+			"-\\cite{book}           	\tcitaiton of the book\n"+
+			"-\\f{name,10,description}   \t add the figure specified by:\n"+
+			"\t-name\n\t-width (optional)\n\t-description (optional)\n"+
+			"-\\f{name}                  \t reference to already existing figure\n";
+			
+	private final String p3 = "Literature:\n"+
+			"-based on the LaTeX formatting\n"+
+			"-at the end of file add e.g. this:\n\n"+
+			"\n\n\\begin{literatura}{1}\n\\bibitem{kniha} " +
+			"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n \\end{literatura}\n";
+	
+	
+	
 	private final String temp1 = "\\title{Name of the document}\n\\author{Name of Author}\n"+
 	"\\begin{abstract}\n\tAbstract in one Line..\n\\end{abstract}\n"+
 	"\\section{Section}\nSome normal text..\n-itemized text\n-Some text in \\b{bold} and \\i{italics}.\n"+
