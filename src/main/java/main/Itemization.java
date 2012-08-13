@@ -50,13 +50,9 @@ public class Itemization {
 		// for all lines
 		for(int i=0; i<lines.length; i++){
 			// check whether to interrupt itemization
-			this.pln(i+"before: ", 6,i, lines);
-			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------eb"+this.itemizing);
+			//this.pln(i+"before: ", 6,i, lines);
 			lines[i] = this.handleItemEndersIII(lines, i);
-			this.pln(i+"after: ", 6,i, lines);
-
-			//System.out.println("s: lines:["+i+"]: "+lines[i]+"\n-------ea "+this.itemizing);
-			//lines[i] = this.handleItemEnders(lines[i]);
+			//this.pln(i+"after: ", 6,i, lines);
 			
 			// count tabs and check for "-" symbol or a free line
 			mark = countTabs(lines[i]);
@@ -64,25 +60,19 @@ public class Itemization {
 			if(mark.comment){ // just ignore comments..
 				lines[i] = mark.line;
 			}else if(mark.freeLine){
-				System.out.println("jsme v else if, takze free line");
 				if(itemizing && !willEnd(lines,i))
 					lines[i] = this.makeTabs()+"\t\t"+space;
 			}else{
-				System.out.println("jsme v else, takze se tu neco deje");
 				// new item?
 				if(mark.item){
-					System.out.println("new item");
 					// the same depth?
 					if(mark.nTabs == this.actualItemDepth){
-						System.out.println("mark.ntabs: actual: "
-								+this.actualItemDepth+ " l: "+lines[i]);
 						lines[i] = this.addItem(lines[i]);
 					}else if(mark.nTabs > this.actualItemDepth){
-						System.out.println("aaa");
-						this.pln("aaa b:", 6, i, lines);
+//						this.pln("aaa b:", 6, i, lines);
 						lines[i] = this.addDeeperItem(lines[i], mark.nTabs);
 
-						this.pln("aaa a:", 6, i, lines);
+	//					this.pln("aaa a:", 6, i, lines);
 					}else if(mark.nTabs < this.actualItemDepth){
 						lines[i] = this.addShallowerItem(lines[i], mark.nTabs);
 					}
@@ -173,22 +163,15 @@ public class Itemization {
 		
 		String tmp;
 		for(int i=actual+1; i<lines.length-1; i++){
-			System.out.println("i: "+i);
 			if(this.hasItemEnder(lines[i])){
-				System.out.println("WE: found item ender, T");
 				return true;
 			}
 			 
 			tmp = lines[i].replaceAll("\\S", "x"); //replace all non-white-spaces with x
 			if(!lines[i].equals(tmp)){
-				System.out.println(lines[i]);
-				System.out.println("i: "+i+" length: "+(lines.length-1));
-				System.out.println(tmp);
-				System.out.println("WE: f");
 				return false;
 			}
 		}
-		System.out.println("WE: t");
 		return true;
 	}
 	
@@ -200,15 +183,11 @@ public class Itemization {
 	 */
 	private boolean documentWillEnd(String[] lines, int actual){
 		if(actual == lines.length){
-			System.out.println("t "+actual+" "+lines.length );
 			return true;
 		}
 		String tmp;
 		for(int i=actual+1; i<lines.length; i++){
 			tmp = lines[i].replaceAll("\\S", "x"); //replace all non-white-spaces with x
-			
-
-			System.out.println("DWE loop: "+i+" "+lines[i] +"\n"+tmp);
 			if(!lines[i].equals(tmp)){
 				return false;
 			}
@@ -281,13 +260,9 @@ public class Itemization {
 		
 		// if there is some itemization ender (or the EOF will follow), decrease itemization to 0
 		if(this.hasItemEnder(lines[which]) && itemizing ){
-			
-			//line = this.decreaseItemizationTo(line, 0);
-			line = this.decreaseBy(lines[which], this.actualItemDepth+1);
-			
+			line = this.decreaseBy(lines[which], this.actualItemDepth+1);	
 			this.itemizing = false;			// no itemization initialized
 		}
-		System.out.println("WE back: "+line+" || "+this.itemizing);
 		return line;
 	}
 	
@@ -295,10 +270,7 @@ public class Itemization {
 		String line = lines[which];
 
 		if(this.documentWillEnd(lines, which) && this.itemizing){
-			 System.out.println("xxxxxxxxxxxxxxx DOcument will end now!" +lines[which]);
-
 				line = this.decreaseByAfterLine(lines[which], this.actualItemDepth+1);
-				
 				this.itemizing = false;			// no itemization initialized
 		}
 		return line;

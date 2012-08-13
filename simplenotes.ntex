@@ -18,4 +18,10 @@ Vybrane nastroje pro spravu zdrojovych kodu projektu HANNS, a postup jak je nain
 -For installation of Eclipse plugin I used HgEclipse from this location: http://javaforge.com/project/HGE
 	-ted testujeme odsazeni
 	-neceho dalsiho
+		-dalsi level
+	-mensi level
+			-jeste vetsi nez dalsi level
+			-to same
+-leven 0
+tady uplne bez odrazly
 

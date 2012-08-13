@@ -9,6 +9,7 @@ echo $PWD
 
 
 NAME='simplenotes'
+#NAME='notes'
 echo $NAME
 echo "====================== nTex to LaTex   ===================="
 java -jar nTexProject-1.1.jar -name $NAME

@@ -4,7 +4,7 @@
 		module="nTexProject"
 		revision="1.1"
 		status="integration"
-		publication="20120813115212"
+		publication="20120813123556"
 	/>
 	<configurations>
 		<conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
