@@ -195,9 +195,18 @@ public class Figures {
 	}
 	
 	private String getLabel(String[] s){
-		// no label specified
-		if(s.length<3)
-			return this.nolabel;
+		// first is name, second is either a width (single double) or a label
+		if(s.length<3){
+			if(s.length==2){
+				// try to parse a single double, if OK, there is no label
+				try{
+					double w = Double.parseDouble(s[1]);
+					return this.nolabel;
+				}catch(Exception e){
+					return s[1];
+				}
+			}
+		}
 		// accidentally cut some commas in the label?
 		if(s.length>3){
 			String st = s[2];
