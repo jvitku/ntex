@@ -6,7 +6,6 @@ echo "
 "
 echo $PWD
 
-#NAME='simplenotes'
 NAME='notes'
 echo $NAME
 echo "====================== Deploying files to the place ===================="
