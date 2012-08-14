@@ -1,4 +1,4 @@
-Aktualni (pouzivana) verze je ve slozce build/libs/v1.1_actual
+Aktualni (pouzivana) verze je ve slozce actual_verion
 
 
 projekt spravovan pomoci gradle, staci spustit gradle wrapper
