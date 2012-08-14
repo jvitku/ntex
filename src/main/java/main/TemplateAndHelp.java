@@ -53,7 +53,7 @@ public class TemplateAndHelp {
 			"\t-Structure is created by means of tabulators and '-' marker (as this help is)";
 	
 	private final String p2 = "Basic commands:\n"+
-			"-\\title{Document name}\n-\\author{Your Name}\n\\begin{begin}\n\tabstract in one line\n"+
+			"-\\title{Document name}\n-\\author{Your Name}\n-\\begin{begin}\n\tabstract (in one line)\n"+
 			" \\end{abstract}\n"+
 			"-\\b{bold text}\n-\\i{italic text}\n"+
 			"-\\section{section name}\n-\\subsection{subsection name..}\n"+
