@@ -12,7 +12,7 @@ echo $PWD
 NAME='notes'
 echo $NAME
 echo "====================== nTex to LaTex   ===================="
-java -jar nTexProject-1.1.jar -name $NAME
+java -jar nTex.jar -name $NAME
 
 echo "====================== LaTex to PDF 1 ====================="
 echo $NAME'.tex'
