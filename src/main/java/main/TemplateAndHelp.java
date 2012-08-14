@@ -44,17 +44,18 @@ public class TemplateAndHelp {
 			"-Can generate template ('"+tempName+"') by use of command:"+
 			" java -jar nTexProject-x.x.jar -template y\n"+
 			"-Edit the '"+tempName+"' file according to formatting rules\n"+
-			"-Run the '"+scriptName+"' in order to generate and open pdf";
+			"-Run the '"+scriptName+"' script in order to generate and open pdf";
 	
 	private final String p11 = "Structure of the document:\n"+
 			"-Document is structured by means of:\n"+
 			"\t-LaTeX abstract\n" +
 			"\t-LaTeX (sub)section commands\n"+
-			"\t-Structure is created by means of tabulators and '-' marker";
+			"\t-Structure is created by means of tabulators and '-' marker (as this help is)";
 	
 	private final String p2 = "Basic commands:\n"+
-			"-\\title{Document name}\n-\\author{Your Name}\n"+
-			"-\\b{bold text}\n-\\{italic text}\n"+
+			"-\\title{Document name}\n-\\author{Your Name}\n\\begin{begin}\n\tabstract in one line\n"+
+			" \\end{abstract}\n"+
+			"-\\b{bold text}\n-\\i{italic text}\n"+
 			"-\\section{section name}\n-\\subsection{subsection name..}\n"+
 			"-\\cite{book}           	\t citaiton of the book\n"+
 			"-\\f{name,10,description}   \t add the figure specified by:\n"+
