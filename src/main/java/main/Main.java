@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Made by Jaroslav Vitku
+ * 
+ * stored here: https://bitbucket.org/jvitku/ntexproject/changesets
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
@@ -31,10 +36,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("Ahooj");
-		
-		
-		
 		Logger log = new Logger();		// init logging system
 		Main m = new Main();		
 		
@@ -51,7 +52,8 @@ public class Main {
 		if(ntex == null || temp == null || wr == null)
 			return;
 
-		m.parse(ntex, temp, wr, log);
+		// parse the input ntex file, if no \{title} tak found, append also file name
+		m.parse(m.notes, ntex, temp, wr, log);
 		
 		m.conclusion(log);
 	}
@@ -76,6 +78,15 @@ public class Main {
 			}
 			else if(args[poc].equalsIgnoreCase("-debug"))
 				log.debug = true;
+			else if(args[poc].equalsIgnoreCase("-help")){
+				TemplateAndHelp t = new TemplateAndHelp(log);
+				t.help();
+				return false;
+			}else if(args[poc].equals("-template")){
+				TemplateAndHelp t = new TemplateAndHelp(log);
+				t.template();
+				return false;
+			}
 			else{
 				log.err("Unrecognized parameter: "+args[poc]+ " "+args[poc+1]);
 				this.printUsage(log);
@@ -94,7 +105,8 @@ public class Main {
 	private void printUsage(Logger log){
 		log.err("Usage: If no argument found, I am looking for files: '"+defName+".ntex' and '"+template+
 				"' and will create file '"+defName+".tex'");
-		log.err("Usage: arguments are: \n\t-name name\n\t-debug y");
+		log.err("Usage: arguments are: \n\t-name name\n\t-debug y\n\t-help y\n" +
+				"\t-template y 	\t [generates the template file]");
 	}
 	
 	private void conclusion(Logger log){
@@ -111,13 +123,13 @@ public class Main {
 		}
 	}
 	
-	public void parse(BufferedReader ntex,BufferedReader temp, 
+	public void parse(String name, BufferedReader ntex,BufferedReader temp, 
 			BufferedWriter wr, Logger log){
 		
 		Text t = new Text(log);
 		
-		String title = t.getTitle(ntex);
-		String author = t.copyIntro(temp, wr);
+		String title = t.getTitle(name,ntex);
+		String author = t.copyIntro(temp,wr,ntex);
 		
 		Files.writeLine(wr, title, log);
 		Files.writeLine(wr, author, log);

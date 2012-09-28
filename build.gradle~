@@ -11,7 +11,7 @@ task wrapper(type: Wrapper) {
 version = '1.1'
 jar {
     manifest {
-        attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'NTexProject test', 'Version': version 
+        attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'NTexProject', 'Version': version 
     }
 }
 
@@ -21,6 +21,7 @@ uploadArchives {
     repositories {
        flatDir {
            dirs '.'
+		   dirs	'outputFolder'
        }
     }
 }
@@ -33,5 +34,5 @@ task out(dependsOn: uploadArchives) << {
 }
 
 task other << {
-    println "I'm not a default task!"
+    println "I'm doin' nothin' bro"
 }
