@@ -29,7 +29,7 @@ echo "====================== Done ==============================="
 
 PDFNAME=$NAME'.pdf'
 
-if [ "$MAC" = 0]; then
+if [ "$MAC" = 0 ]; then
     okular $PDFNAME
 else
     open -a Preview $PDFNAME
