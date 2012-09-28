@@ -7,12 +7,15 @@ echo "
 "
 echo $PWD
 
+# set the actual version of project !!!!
+VERSION="1.1"
+APP="nTexProject-"$VERSION".jar"
+MAC=0
 
-#NAME='simplenotes'
 NAME='notes'
 echo $NAME
 echo "====================== nTex to LaTex   ===================="
-java -jar nTex.jar -name $NAME
+java -jar $APP -name $NAME
 
 echo "====================== LaTex to PDF 1 ====================="
 echo $NAME'.tex'
@@ -25,4 +28,9 @@ pdflatex $TEXNAME
 echo "====================== Done ==============================="
 
 PDFNAME=$NAME'.pdf'
-okular $PDFNAME
+
+if [ "$MAC" = 0]; then
+    okular $PDFNAME
+else
+    open -a Preview $PDFNAME
+fi

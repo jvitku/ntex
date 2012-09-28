@@ -38,7 +38,8 @@ pu()
 	echo " "
 	echo "====================== Usage ===================="
 	echo 	"Type 'ntex init' to just copy files"
-	echo	"Type 'ntex temp' to copy and generate template file too"
+	echo	"Type 'ntex generate' to copy and generate template file too"
+	echo 	"Type 'ntex help' for information how to use this"
 	echo "================================================="
 	echo " "
 }
@@ -47,12 +48,12 @@ pu()
 deploy()
 {
 	echo "====================== Deploying files to the place ===================="
-	echo "copying files from:
+	echo "Intalling application, copying files from:
 	$BASEDIR
 	to:
 	$PWD"
 
-	cp $BASEDIR'/nTex.jar' $PWD
+	cp $BASEDIR$REL$APP $PWD
 	cp $BASEDIR'/IEEEtrancz.cls' $PWD
 	cp $BASEDIR'/template.tex' $PWD
 	cp $BASEDIR'/compile' $PWD
@@ -64,13 +65,27 @@ deploy()
 init()
 {
 	echo "====================== Generating notes.ntex file  ====================="
-	java -jar nTex.jar -template y
+	java -jar $APP -template y
 	echo "..done"
+}
+
+ph()
+{
+	echo "============================== ntex help  =============================="
+	java -jar $APP -help y
 }
 
 ARGC=1
 INIT="init"
-TEMP="temp"
+TEMP="generate"
+HELP="help"
+
+# set the actual version of project !!!!
+VERSION="1.1"
+APP="nTexProject-"$VERSION".jar"
+echo "\nProject name: "$APP
+
+REL="/../build/install/ntexproject/lib/"
 
 if [ "$#" -eq "$ARGC" ]; then
 	if [ "$1" = "$INIT" ]; then
@@ -79,7 +94,10 @@ if [ "$#" -eq "$ARGC" ]; then
 	elif [ "$1" = "$TEMP" ]; then
 		deploy
 		init
-		pn	
+		pn
+	elif [ "$1" = "$HELP" ]; then
+		deploy
+		ph
 	else
 		pu
 	fi
