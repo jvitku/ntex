@@ -69,7 +69,7 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\ntexproject-1.1.jar
+set CLASSPATH=%APP_HOME%\lib\ntexproject-2.0.jar
 
 @rem Execute ntexproject
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %NTEXPROJECT_OPTS%  -classpath "%CLASSPATH%" main.Main %CMD_LINE_ARGS%

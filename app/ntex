@@ -82,7 +82,7 @@ HELP="help"
 
 # set the actual version of project !!!!
 VERSION="2.0"
-APP="nTexProject-"$VERSION".jar"
+APP="ntexproject-"$VERSION".jar"
 echo "\nProject name: "$APP
 
 REL="/../build/install/ntexproject/lib/"

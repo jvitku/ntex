@@ -9,7 +9,7 @@ echo $PWD
 
 # set the actual version of project !!!!
 VERSION="2.0"
-APP="nTexProject-"$VERSION".jar"
+APP="ntexproject-"$VERSION".jar"
 MAC=0
 
 NAME='notes'
