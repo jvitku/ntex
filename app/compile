@@ -8,7 +8,7 @@ echo "
 echo $PWD
 
 # set the actual version of project !!!!
-VERSION="1.1"
+VERSION="2.0"
 APP="nTexProject-"$VERSION".jar"
 MAC=0
 
