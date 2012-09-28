@@ -71,7 +71,7 @@ public class TemplateAndHelp {
 	
 	
 	private final String temp1 = "\\title{Name of the document}\n\n\\author{Name of Author}\n\n"+
-	"\\begin{abstract}\n\tAbstract in one Line..\n\\end{abstract}\n\n"+
+	"\\begin{abstract}\n\tAbstract in one Line..\n\\end{abstract}\n\n\n\n"+
 	"\\section{Section}\n\nSome normal text..\n-itemized text\n-Some text in \\b{bold} and \\i{italics}.\n"+
 	"\t-higher level..\n\n\\subsection{Some subsection here}\n-Here is an example of some citation: \\cite{kniha}.\n"+
 	"\n\n-This item is separated by means of several enters from the above one\n"+
@@ -83,7 +83,16 @@ public class TemplateAndHelp {
 	"\n\n\\begin{literatura}{1}\n\n\\bibitem{kniha} " +
 	"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n\\end{literatura}";
 	
-	public void template(){
+	private final String temp2 = "\\title{ doc }\n\n"+
+			"\\begin{abstract}\n\tabs \n\\end{abstract}\n\n" +
+			"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% text\n\n"+
+			"\\section{sec}\ntext..\n\n\\subsection{sub}\ncitation \\cite{kniha}, figure: \\f{a,4,label}"+
+			", reference: \\f{a}\n\n\n\n\n"+
+			"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% literature"+
+			"\n\\begin{literatura}{1}\n\n\\bibitem{kniha} " +
+			"\n\tAllman J.: \\emph{Evolving Brains}, Scientific American Library Paperback, 2000.\n\\end{literatura}";
+	
+	public void template(int which){
 		// is there folder for pictures?
 		if(!this.isThere("fig/")){
 			// cannot be created?
@@ -98,7 +107,7 @@ public class TemplateAndHelp {
 			this.createImage("fig/b", 1);
 		
 
-		this.writeTemplate();
+		this.writeTemplate(which);
 		
 		System.out.println("Template generated in the file: "+tempName+"\n"+
 				"\t-now edit the file '"+tempName+"' and/or\n"+
@@ -106,13 +115,23 @@ public class TemplateAndHelp {
 						"in into the LaTeX and generate pdf");
 	}
 	
-	private void writeTemplate(){
+	private void writeTemplate(int which){
 		
 		try{
 			  // Create file 
 			  FileWriter fstream = new FileWriter(tempName);
 			  BufferedWriter out = new BufferedWriter(fstream);
-			  out.write(temp1);
+			  switch(which){
+			  	case 1:
+			  		out.write(temp1);	
+			  		break;
+			  	case 2:
+			  		out.write(temp2);	// shorter template
+			  		break;
+			  	default:
+			  		System.err.println("unrecognized selection of template");
+			  		out.write(temp1);
+			  }
 			  //Close the output stream
 			  out.close();
 		}catch (Exception e){//Catch exception if any

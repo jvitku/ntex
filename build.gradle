@@ -8,10 +8,10 @@ task wrapper(type: Wrapper) {
 
 
 //	tohle je metoda ktera vyrobi jar do build/libs s timhle manifestem
-version = '2.0'
+version = '2.1'
 jar {
     manifest {
-        attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'NTexProject', 'Version': version 
+        attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'ntexproject', 'Version': version 
     }
 }
 

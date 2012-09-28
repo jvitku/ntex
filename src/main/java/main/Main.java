@@ -95,7 +95,11 @@ public class Main {
 				return false;
 			}else if(args[poc].equals("-template")){
 				TemplateAndHelp t = new TemplateAndHelp(log);
-				t.template();
+				t.template(1);
+				return false;
+			}else if(args[poc].equals("-simpletemplate")){
+				TemplateAndHelp t = new TemplateAndHelp(log);
+				t.template(2);
 				return false;
 			}
 			else{

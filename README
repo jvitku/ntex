@@ -1,0 +1,30 @@
+Ntex is a tool for making super-fast notes in LaTeX. Writing is almost as distract-free as editing a simple text file, but ntex file can be converted to *.tex file and then to *.pdf.
+
+With this project in path you just du:
+	-mkdir myNotes
+	-cd myNotes
+	-ntex generate
+	-ntex help  		[for information about formating]
+	-vi notes.ntex 		[edit the file]
+	-./compile			[build the pdf file and open it]
+
+
+
+-------------------------------
+Commands:
+	ntex generate 			[copies all files necessary and generates notes.ntex with MANY information]
+	ntex gen				[does the same byt generates SMALL notes.ntex file with basic structure]
+	ntex init				[just copies files, create your own notes.ntex file]
+	ntex help				[print help and formatting info]
+
+-------------------------------
+Notes: 
+	-project is written in java in eclipse and uses gradle
+	-basic usage of gradle:
+		./gradlew out  		[builds jar file, which is deployed under 'build/install...']
+		./gradlew eclipse 	[rebuilds eclipse project]
+	-all files copied by 'ntex generate' can be found in folder 'app' 	[you have to move jar file to position after rebuilding]
+
+
+-------------------------------
+@author Jaroslav Vitku jarda.vitku[at]gmail.com

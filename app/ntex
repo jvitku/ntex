@@ -47,6 +47,7 @@ pu()
 # copy files
 deploy()
 {
+    echo ""
 	echo "====================== Deploying files to the place ===================="
 	echo "Intalling application, copying files from:
 	$BASEDIR
@@ -59,6 +60,7 @@ deploy()
 	cp $BASEDIR'/compile' $PWD
 
 	echo "..done"
+	echo " "
 }
 
 # init file
@@ -67,6 +69,16 @@ init()
 	echo "====================== Generating notes.ntex file  ====================="
 	java -jar $APP -template y
 	echo "..done"
+	echo " "
+}
+
+# init file with short template
+init2()
+{
+	echo "====================== Generating notes.ntex file  ====================="
+	java -jar $APP -simpletemplate y
+	echo "..done"
+	echo " "
 }
 
 ph()
@@ -78,11 +90,12 @@ ph()
 ARGC=1
 INIT="init"
 TEMP="generate"
+TEMP2="gen"
 HELP="help"
 
 # set the actual version of project !!!!
-VERSION="2.0"
-APP="nTexProject-"$VERSION".jar"
+VERSION="2.1"
+APP="ntexproject-"$VERSION".jar"
 echo "\nProject name: "$APP
 
 REL="/../build/install/ntexproject/lib/"
@@ -90,11 +103,17 @@ REL="/../build/install/ntexproject/lib/"
 if [ "$#" -eq "$ARGC" ]; then
 	if [ "$1" = "$INIT" ]; then
 		deploy
-		pn		
+		pn
+	# make template
 	elif [ "$1" = "$TEMP" ]; then
 		deploy
 		init
-		pn
+		#pn
+	# make short template
+	elif [ "$1" = "$TEMP2" ]; then
+    	deploy
+    	init2
+    	#pn
 	elif [ "$1" = "$HELP" ]; then
 		deploy
 		ph

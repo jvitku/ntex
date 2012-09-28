@@ -1,0 +1,17 @@
+BUGS:
+
+-\f{name} without size throws IndexArrayOutOfBound 2
+
+
+TODO:
+-make better figure placement (force it to appear in the text)
+-find a way how to sum-up warnings and errors after LaTex exits
+-optional abstract
+
+-allow commas in picture descriptions
+-allow equations in picture descriptions
+
+
+
+POSSIBLE FEATURES
+-references for picture even before declaration of picture (size)

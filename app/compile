@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 clear
 echo "
 
@@ -8,9 +8,8 @@ echo "
 echo $PWD
 
 # set the actual version of project !!!!
-VERSION="2.0"
-APP="nTexProject-"$VERSION".jar"
-MAC=0
+VERSION="2.1"
+APP="ntexproject-"$VERSION".jar"
 
 NAME='notes'
 echo $NAME
@@ -29,8 +28,20 @@ echo "====================== Done ==============================="
 
 PDFNAME=$NAME'.pdf'
 
-if [ "$MAC" = 0 ]; then
-    okular $PDFNAME
-else
+MAC="darwin10.0"
+ML="darwin12"
+LINUX="linux-gnu"
+
+if [ "$OSTYPE" = "$MAC" ]; then
+    echo "Openning pdf under Mac OS X.."
     open -a Preview $PDFNAME
+elif [ "$OSTYPE" = "$LINUX" ]; then
+    echo "Openning pdf under Linux.."
+    okular $PDFNAME
+elif [ "$OSTYPE" = "$ML" ]; then
+    echo "Openning pdf under Mac OS X ML"
+    open -a preview $PDFNAME
+else
+    echo "Unknown type of OS: -" $OSTYPE "- ..openning nothin'.."
 fi
+
