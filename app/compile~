@@ -30,7 +30,6 @@ PDFNAME=$NAME'.pdf'
 
 MAC="darwin10.0"
 LINUX="linux-gnu"
-echo $OSTYPE
 
 if [ "$OSTYPE"="$MAC" ]; then
     echo "Openning pdf under Mac OS X.."
