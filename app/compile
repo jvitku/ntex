@@ -30,16 +30,14 @@ PDFNAME=$NAME'.pdf'
 
 MAC="darwin10.0"
 LINUX="linux-gnu"
-echo $OSTYPE
 
-if [ "$OSTYPE"="$MAC" ]; then
+if [ "$OSTYPE" = "$MAC" ]; then
     echo "Openning pdf under Mac OS X.."
     open -a Preview $PDFNAME
-elif [ "$OSTYPE"="$LINUX" ]; then
+elif [ "$OSTYPE" = "$LINUX" ]; then
     echo "Openning pdf under Linux.."
     okular $PDFNAME
 else
-    echo $OSTYPE
     echo "Unknown type of OS: -" $OSTYPE "- ..openning nothin'.."
 fi
 
