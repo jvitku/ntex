@@ -10,4 +10,9 @@ projekt spravovan pomoci Mercurial, na adrese: https://jvitku@bitbucket.org/jvit
 
 
 
+-aktualne pouzita verze aplikace je ulozena ve slozce app, but deploys jar file actually compiled in the build/install.. folder
 
+
+-note that file notes.ntex is generated from the source according to the requirements, supported is:
+	-generate (generate full template)
+	-gen (generate short template)
