@@ -1,1 +1,3 @@
 -\f{name} without size throws IndexArrayOutOfBound 2
+
+-make better figure placement (force it to appear in the text)
