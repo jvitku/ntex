@@ -1,10 +1,19 @@
-!SESSION 2012-09-28 11:41:00.176 -----------------------------------------------
-eclipse.buildId=I20120608-1400
-java.version=1.6.0_35
-java.vendor=Apple Inc.
-BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
-Framework arguments:  -keyring /Users/j/.eclipse_keyring -showlocation
-Command-line arguments:  -os macosx -ws cocoa -arch x86 -data /Users/j/workspace/ntexproject -keyring /Users/j/.eclipse_keyring -showlocation
 
-!ENTRY org.eclipse.core.net 1 0 2012-09-28 11:41:06.352
-!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!ENTRY org.eclipse.ui.ide 4 4 2013-05-18 22:02:55.887
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2013-05-18 22:02:55.887
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2013-05-18 22:02:55.887
+!MESSAGE Could not write workspace metadata '/Users/j/workspace/ntexproject/.metadata/.plugins/org.eclipse.core.resources/.root/2.tree'.
+!STACK 0
+java.io.FileNotFoundException: /Users/j/workspace/ntexproject/.metadata/.plugins/org.eclipse.core.resources/.root/2.tree (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:194)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:145)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1350)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1134)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
