@@ -94,7 +94,7 @@ TEMP2="gen"
 HELP="help"
 
 # set the actual version of project !!!!
-VERSION="2.0"
+VERSION="2.1"
 APP="ntexproject-"$VERSION".jar"
 echo "\nProject name: "$APP
 
