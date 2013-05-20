@@ -39,7 +39,7 @@ elif [ "$OSTYPE" = "$LINUX" ]; then
     echo "Openning pdf under Linux.."
     okular $PDFNAME
 elif [ "$OSTYPE" = "$ML" ]; then
-    echo "Openning pdf under Linux.."
+    echo "Openning pdf under Mac OS X ML"
     open -a preview $PDFNAME
 else
     echo "Unknown type of OS: -" $OSTYPE "- ..openning nothin'.."
