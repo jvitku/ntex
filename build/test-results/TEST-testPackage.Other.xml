@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="js-MacBook.local" name="testPackage.Other" tests="1" time="0.091" timestamp="2013-07-15T21:25:03">
+  <properties />
+  <testcase classname="testPackage.Other" name="test" time="0.0090" />
+  <system-out><![CDATA[hi, testing
+
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,9 +1,11 @@
-BUGS:
+====================== BUGS:
 
--\f{name} without size throws IndexArrayOutOfBound 2
+#1: \f{name} without size throws IndexArrayOutOfBound 2
 
 
-TODO:
+
+======================= TODOs:
+
 -make better figure placement (force it to appear in the text)
 -find a way how to sum-up warnings and errors after LaTex exits
 -optional abstract
@@ -13,5 +15,5 @@ TODO:
 
 
 
-POSSIBLE FEATURES
+======================= POSSIBLE FEATURES
 -references for picture even before declaration of picture (size)

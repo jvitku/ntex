@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="js-MacBook.local" name="testPackage.Main" tests="4" time="2.574" timestamp="2013-07-15T23:20:30">
+  <properties />
+  <testcase classname="testPackage.Main" name="ntexSimpleTemplate" time="2.437" />
+  <testcase classname="testPackage.Main" name="compile" time="0.0020" />
+  <testcase classname="testPackage.Main" name="ntexhelp" time="0.0040" />
+  <testcase classname="testPackage.Main" name="ntexTemplate" time="0.05" />
+  <system-out><![CDATA[Template generated in the file: notes.ntex
+	-now edit the file 'notes.ntex' and/or
+	-run the srcipt called 'compile' in order to convert in into the LaTeX and generate pdf
+
+
+======================What is it:
+-Tool for making fast (simply formatted) notes with picture support
+-Write notes into the text file 'notes.ntex'
+
+-Java application converts *.ntex file into *.tex file based on provided template files
+-Script 'compile' does this:
+	-Converts *.ntex file to *.tex file
+	-Generates pdf file
+	-Opens the pdf in pdf viewer
+
+======================Basic Usage:
+-Initialize the folder for notes, run: 'ntex init
+-Can generate template ('notes.ntex') by use of command: java -jar nTexProject-x.x.jar -template y
+-Edit the 'notes.ntex' file according to formatting rules
+-Run the 'compile' script in order to generate and open pdf
+
+======================Structure of the document:
+-Document is structured by means of:
+	-LaTeX abstract
+	-LaTeX (sub)section commands
+	-Structure is created by means of tabulators and '-' marker (as this help is)
+
+======================Basic commands:
+-\title{Document name}
+-\author{Your Name}
+-\begin{begin}
+	abstract (in one line)
+ \end{abstract}
+-\b{bold text}
+-\i{italic text}
+-\section{section name}
+-\subsection{subsection name..}
+-\cite{book}           		 citaiton of the book
+-\f{name,10,description}   	 add the figure specified by:
+	-name
+	-width (optional)
+	-description (optional)
+-\f{name}                  	 reference to already existing figure
+
+
+======================Literature:
+-based on the LaTeX formatting
+-at the end of file add e.g. this:
+
+\begin{literatura}{1}
+\bibitem{kniha} 
+	Allman J.: \emph{Evolving Brains}, Scientific American Library Paperback, 2000.
+\end{literatura}
+
+
+======================
+Template generated in the file: notes.ntex
+	-now edit the file 'notes.ntex' and/or
+	-run the srcipt called 'compile' in order to convert in into the LaTeX and generate pdf
+]]></system-out>
+  <system-err><![CDATA[nTex ERROR: could not find file: template.tex
+]]></system-err>
+</testsuite>

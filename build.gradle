@@ -1,3 +1,4 @@
+//////////////////////////// Project setup
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
@@ -6,15 +7,13 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.1'
 }
 
-
-//	tohle je metoda ktera vyrobi jar do build/libs s timhle manifestem
+//	this method generates jar file into build/libs s with this manifest
 version = '2.1'
 jar {
     manifest {
         attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'ntexproject', 'Version': version 
     }
 }
-
 
 // 	this method cannot be renamed
 uploadArchives {
@@ -25,7 +24,7 @@ uploadArchives {
     }
 }
 
-// Create the runnable application from this project into build/lib/bin.. ? [./gradlew installApp]	
+///////////////  Create the runnable application from this project into build/lib/bin.. ? [./gradlew installApp]	
 apply plugin: 'application'
 mainClassName = 'main.Main'
 
@@ -34,6 +33,23 @@ task out(dependsOn: uploadArchives) << {
 	println "Archive (jar file) should be in the place!"
 }
 
-task other << {
-    println "I'm doin' nothin' bro"
+//////////////// Test suite - setup
+repositories {
+    mavenCentral()
 }
+
+dependencies {
+    testCompile 'junit:junit:[4,)'
+    testRuntime files('app/template.tex')
+    testCompile files('app/template.tex')
+}
+
+test {
+    testLogging {
+        // Show that tests are run in the command-line output and whether they pass
+        events 'started', 'passed'
+		// more info:
+		//exceptionFormat = 'full'
+    }
+}
+

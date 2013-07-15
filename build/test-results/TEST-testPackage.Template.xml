@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="js-MacBook.local" name="testPackage.Template" tests="1" time="0.046" timestamp="2013-07-15T23:20:32">
+  <properties />
+  <testcase classname="testPackage.Template" name="image" time="0.043" />
+  <system-out><![CDATA[Template generated in the file: notes.ntex
+	-now edit the file 'notes.ntex' and/or
+	-run the srcipt called 'compile' in order to convert in into the LaTeX and generate pdf
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

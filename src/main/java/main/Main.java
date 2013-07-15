@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Made by Jaroslav Vitku
+ * Made by Jaroslav Vitku jarda.vitku@gmail.com
  * 
  * stored here: https://bitbucket.org/jvitku/ntexproject/changesets
  */

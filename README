@@ -1,30 +1,41 @@
-Ntex is a tool for making super-fast notes in LaTeX. Writing is almost as distract-free as editing a simple text file, but ntex file can be converted to *.tex file and then to *.pdf.
+Ntex is a tool for making super-fast notes in LaTeX. 
+Writing is almost as distract-free as editing a simple text file, 
+but ntex file can be converted to *.tex file and then to *.pdf.
+User can make sections, subsections, bulleted lists citations
+and add figures in simplified way. 
+Also, the rest of LaTeX tags is supported.
 
-With this project in path you just du:
-	-mkdir myNotes
-	-cd myNotes
+------------------------------- Usage:
+
+With this project in path you just do the following:
+	-add app/ntex file to your path
+	
+	-mkdir myNote && cd myNote
 	-ntex generate
-	-ntex help  		[for information about formating]
+	-ntex help  		[for information about formatting]
 	-vi notes.ntex 		[edit the file]
 	-./compile			[build the pdf file and open it]
 
 
+------------------------------- Commands:
 
--------------------------------
-Commands:
-	ntex generate 			[copies all files necessary and generates notes.ntex with MANY information]
-	ntex gen				[does the same byt generates SMALL notes.ntex file with basic structure]
-	ntex init				[just copies files, create your own notes.ntex file]
-	ntex help				[print help and formatting info]
+	ntex generate 		[copies all files necessary and generates notes.ntex with MANY information]
+	ntex gen			[the same, but generates SMALL notes.ntex file with basic structure]
+	ntex init			[just copies files, create your own notes.ntex file]
+	ntex help			[print help and formatting info]
 
--------------------------------
-Notes: 
-	-project is written in java in eclipse and uses gradle
+------------------------------- Notes: 
+
+	-project is written in java in eclipse and uses gradle: http://www.gradle.org/
 	-basic usage of gradle:
-		./gradlew out  		[builds jar file, which is deployed under 'build/install...']
-		./gradlew eclipse 	[rebuilds eclipse project]
-	-all files copied by 'ntex generate' can be found in folder 'app' 	[you have to move jar file to position after rebuilding]
+		./gradlew installApp [builds application, jar file (under 'build/install...') is used]
+		./gradlew eclipse 	 [rebuilds eclipse project]
+		./gradkew test 		 [runs tests]
+	-all files copied by 'ntex generate' can be found in folder 'app' except jar file (see above)
 
 
--------------------------------
+------------------------------- About:
+
 @author Jaroslav Vitku jarda.vitku[at]gmail.com
+
+Provided without any warranty under GPL.
