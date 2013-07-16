@@ -8,7 +8,7 @@ task wrapper(type: Wrapper) {
 }
 
 //	this method generates jar file into build/libs s with this manifest
-version = '2.1'
+version = '1.0'
 jar {
     manifest {
         attributes 'Main-Class': 'main.Main', 'Implementation-Title': 'ntexproject', 'Version': version 

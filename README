@@ -32,9 +32,10 @@ With this project in path you just do the following:
 		./gradlew eclipse 	 [rebuilds eclipse project]
 		./gradkew test 		 [runs tests]
 	-all files copied by 'ntex generate' can be found in folder 'app' except jar file (see above)
-
+	-only Unix systems supported so far
 
 ------------------------------- About:
+
 
 @author Jaroslav Vitku jarda.vitku[at]gmail.com
 

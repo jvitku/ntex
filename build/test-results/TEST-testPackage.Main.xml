@@ -1,10 +1,10 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="testPackage.Main" tests="4" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="js-MacBook.local" time="1.373979367365E9">
+<testsuite name="testPackage.Main" tests="4" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="js-MacBook.local" time="1.373981814981E9">
   <properties/>
-  <testcase name="ntexSimpleTemplate" classname="testPackage.Main" time="2.283"/>
-  <testcase name="compile" classname="testPackage.Main" time="0.022"/>
+  <testcase name="ntexSimpleTemplate" classname="testPackage.Main" time="2.393"/>
+  <testcase name="compile" classname="testPackage.Main" time="0.347"/>
   <testcase name="ntexhelp" classname="testPackage.Main" time="0.0020"/>
-  <testcase name="ntexTemplate" classname="testPackage.Main" time="0.108"/>
+  <testcase name="ntexTemplate" classname="testPackage.Main" time="0.076"/>
   <system-out><![CDATA[Template generated in the file: notes.ntex
 	-now edit the file 'notes.ntex' and/or
 	-run the srcipt called 'compile' in order to convert in into the LaTeX and generate pdf
