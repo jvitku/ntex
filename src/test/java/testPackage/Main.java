@@ -1,10 +1,4 @@
 package testPackage;
-
-import static org.junit.Assert.*;
-
-import main.Logger;
-import main.TemplateAndHelp;
-
 import org.junit.Test;
 
 /**
