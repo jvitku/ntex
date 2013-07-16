@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="testPackage.Template" tests="1" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="js-MacBook.local" time="1.373981815023E9">
+<testsuite name="testPackage.Template" tests="1" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="js-MacBook.local" time="1.373992587694E9">
   <properties/>
-  <testcase name="image" classname="testPackage.Template" time="0.039"/>
+  <testcase name="image" classname="testPackage.Template" time="0.043"/>
   <system-out><![CDATA[Template generated in the file: notes.ntex
 	-now edit the file 'notes.ntex' and/or
 	-run the srcipt called 'compile' in order to convert in into the LaTeX and generate pdf

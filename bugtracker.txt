@@ -13,7 +13,7 @@
 -allow commas in picture descriptions
 -allow equations in picture descriptions
 
-
+-add tests for classes for parsing
 
 ======================= POSSIBLE FEATURES
 -references for picture even before declaration of picture (size)

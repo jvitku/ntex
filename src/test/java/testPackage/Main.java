@@ -9,7 +9,6 @@ import org.junit.Test;
  *
  */
 public class Main {
-
 	/**
 	 * Tests what commands like 'ntex generate' 
 	 * will provably call
@@ -35,7 +34,6 @@ public class Main {
 	@Test
 	public void compile(){
 		main.Main.main(new String[]{"-name","notes"});
-		
 		
 	}
 }
