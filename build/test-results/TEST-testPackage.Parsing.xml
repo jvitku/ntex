@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" hostname="js-MacBook.local" name="testPackage.Parsing" tests="1" time="0.0030" timestamp="2013-07-15T23:20:32">
-  <properties />
-  <testcase classname="testPackage.Parsing" name="testItemize" time="0.0" />
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="testPackage.Parsing" tests="1" failures="0" errors="0" timestamp="2013-07-16T12:56:07" hostname="js-MacBook.local" time="0.0">
+  <properties/>
+  <testcase name="testItemize" classname="testPackage.Parsing" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

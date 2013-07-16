@@ -11,20 +11,35 @@ import java.io.InputStreamReader;
 
 public class Files {
 	
-	public static BufferedReader getReader(String name, Logger log){
-		FileInputStream fstream;
-		try {
-			fstream = new FileInputStream(name);
-		} catch (FileNotFoundException e) {
-			log.err("could not find file: "+name);
-			return null;
+	public static BufferedReader getReader(String name, AltPaths a, Logger log) throws FileNotFoundException{
+		FileInputStream fstream=null;
+		
+		
+		int attempts = 0;
+		// try all possible locations
+		while(attempts<=a.paths.size()){
+			
+			fstream = getStream(a.paths.get(attempts++) + name);
+			// found?
+			if(fstream!= null){
+				DataInputStream in = new DataInputStream(fstream);
+				BufferedReader br = new BufferedReader(new InputStreamReader(in));
+				return br;
+			}
 		}
-		DataInputStream in = new DataInputStream(fstream);
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
-		return br;
+		throw new FileNotFoundException("File: "+name+" not found on any of given locations");	
 	}
 	
-	public static BufferedWriter getWriter(String name, Logger log){
+	private static FileInputStream getStream(String fileName){
+		try {
+			return new FileInputStream(fileName);
+		} catch (FileNotFoundException e) {
+			return null;
+		}
+	}
+	
+	public static BufferedWriter getWriter(String name, Logger log)
+			throws FileNotFoundException, IOException{
 		BufferedWriter bw = null;
         try {
             //Construct the BufferedWriter object
@@ -36,11 +51,11 @@ public class Files {
         } catch (FileNotFoundException ex) {
             //ex.printStackTrace();
         	log.err("could not open the file: "+name);
-        	return null;
+        	throw ex;
         } catch (IOException ex) {
             //ex.printStackTrace();
         	log.err("could not write to file: "+name);
-        	return null;
+        	throw ex;
         }
         return bw;
 	}

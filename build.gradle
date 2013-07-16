@@ -4,7 +4,7 @@ apply plugin: 'eclipse'
 
 // task to create gradlew (used only once)
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.1'
+    gradleVersion = '1.6'
 }
 
 //	this method generates jar file into build/libs s with this manifest
@@ -40,16 +40,11 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:[4,)'
-    testRuntime files('app/template.tex')
-    testCompile files('app/template.tex')
 }
 
 test {
     testLogging {
-        // Show that tests are run in the command-line output and whether they pass
-        events 'started', 'passed'
-		// more info:
-		//exceptionFormat = 'full'
+        //events 'started', 'passed'
+		exceptionFormat = 'full'
     }
 }
-
