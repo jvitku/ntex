@@ -1,9 +1,9 @@
 Ntex is a tool for making super-fast notes in LaTeX. 
 Writing is almost as distract-free as editing a simple text file, 
 but ntex file can be converted to *.tex file and then to *.pdf.
-User can make sections, subsections, bulleted lists citations
-and add figures in simplified way. 
-Also, the rest of LaTeX tags is supported.
+User can make sections, subsections, bulleted lists, citations
+and add figures in a simplified way. 
+Also, the rest of LaTeX commands is supported.
 
 ------------------------------- Usage:
 
