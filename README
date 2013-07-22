@@ -8,31 +8,36 @@ Also, the rest of LaTeX tags is supported.
 ------------------------------- Usage:
 
 With this project in path you just do the following:
-	-add app/ntex file to your path
+	- add app/ntex script to your $PATH
 	
-	-mkdir myNote && cd myNote
-	-ntex generate
-	-ntex help  		[for information about formatting]
-	-vi notes.ntex 		[edit the file]
-	-./compile			[build the pdf file and open it]
+	- mkdir myNote && cd myNote
+	- ntex generate	[init the folder]
+	- ntex help  	[for information about formatting]
+	- vi notes.ntex [edit the file]
+	- ./compile		[build the pdf file and open it]
 
 
 ------------------------------- Commands:
 
-	ntex generate 		[copies all files necessary and generates notes.ntex with MANY information]
-	ntex gen			[the same, but generates SMALL notes.ntex file with basic structure]
-	ntex init			[just copies files, create your own notes.ntex file]
-	ntex help			[print help and formatting info]
+	ntex initialize [copies all files in the place and generates notes.ntex ~ demo]
+	ntex init		[the same, but generates notes.ntex containing just basic structure]
+	ntex help		[print help and formatting info]
+	./compile		[create and open pdf document from the notes.ntex file]
 
 ------------------------------- Notes: 
 
-	-project is written in java in eclipse and uses gradle: http://www.gradle.org/
+	-project is written in java as an eclipse project and uses gradle: http://www.gradle.org/
 	-basic usage of gradle:
 		./gradlew installApp [builds application, jar file (under 'build/install...') is used]
 		./gradlew eclipse 	 [rebuilds eclipse project]
 		./gradkew test 		 [runs tests]
 	-all files copied by 'ntex generate' can be found in folder 'app' except jar file (see above)
 	-only Unix systems supported so far
+	
+	-the script ntex (application) uses:
+	 	-jar file to convert ntex -> latex
+		-pdflatex command (part of LaTeX installation) to convert latex->pdf
+		-Okular or Preview to open/reload the resulting pdf
 
 ------------------------------- About:
 

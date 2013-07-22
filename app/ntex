@@ -1,14 +1,22 @@
 #!/bin/sh
-#clear
+# clear
 #
-# This thing will deploy the files necessary to initialize the ntex project in the current folder.
-# made by Jaroslav Vitku
+# Ntex is a tool used for creating fast notes in LaTeX. 
+# Application simplifies the most used LaTeX commands such as:
+#	-bulleted lists
+#	-citations
+#	-figures
+# ..while still supporting the rest of LaTeX original commands.
+# Used can write fast and distract-free, yet still well-formatted documents.
+#
+# See README
+# @author Jaroslav Vitku
 
-# this is where I am (and all things to copy)
+# this is where I am (and all things to be copied)
 BASEDIR=$(dirname $0)
 
-# this is the destination folder (where to copy)
-#echo $PWD
+# this is the destination folder (where to copy things)
+# echo $PWD
 
 # print intro
 pi(){
